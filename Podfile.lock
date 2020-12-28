@@ -1,0 +1,75 @@
+PODS:
+  - Alamofire (5.4.1)
+  - AnyFormatKit (2.0.6)
+  - JGProgressHUD (2.2)
+  - KeychainAccess (4.2.1)
+  - Kingfisher (5.15.8):
+    - Kingfisher/Core (= 5.15.8)
+  - Kingfisher/Core (5.15.8)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
+    - Moya/Core
+    - RxSwift (~> 5.0)
+  - ReachabilitySwift (4.3.1)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxReachability (1.0.0):
+    - ReachabilitySwift (~> 4.3.1)
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - Toast-Swift (5.0.1)
+  - XCoordinator (2.0.7):
+    - XCoordinator/Core (= 2.0.7)
+  - XCoordinator/Core (2.0.7)
+
+DEPENDENCIES:
+  - AnyFormatKit
+  - JGProgressHUD
+  - KeychainAccess
+  - Kingfisher
+  - Moya/RxSwift
+  - RxCocoa
+  - RxReachability
+  - RxSwift
+  - Toast-Swift
+  - XCoordinator
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AnyFormatKit
+    - JGProgressHUD
+    - KeychainAccess
+    - Kingfisher
+    - Moya
+    - ReachabilitySwift
+    - RxCocoa
+    - RxReachability
+    - RxRelay
+    - RxSwift
+    - Toast-Swift
+    - XCoordinator
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  AnyFormatKit: 3401a4e46db072447a4c7656fa5dc06b12b6678c
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
+  Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxReachability: 21d3e96f39bc166a21c357e923f47dec148ca97b
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
+
+PODFILE CHECKSUM: cbee273d4b5da2df279c8b79408a2b2d7ed7c49e
+
+COCOAPODS: 1.10.0
