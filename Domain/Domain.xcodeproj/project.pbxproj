@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB22294A9B64E90D30228366 /* libPods-Global-Domain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67536D09D6E8449AF3391510 /* libPods-Global-Domain.a */; };
 		E04ED0AF259A2F3E00203ACD /* CommonExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0AE259A2F3E00203ACD /* CommonExtension.framework */; };
 		E04ED0B0259A2F3E00203ACD /* CommonExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0AE259A2F3E00203ACD /* CommonExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E04ED131259A2F6A00203ACD /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED109259A2F6A00203ACD /* StoryboardInitializable.swift */; };
@@ -36,7 +37,6 @@
 		E04ED149259A2F6A00203ACD /* DialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED12E259A2F6A00203ACD /* DialogView.swift */; };
 		E04ED14A259A2F6A00203ACD /* DialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED12F259A2F6A00203ACD /* DialogVC.swift */; };
 		E04ED14B259A2F6A00203ACD /* Dialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04ED130259A2F6A00203ACD /* Dialog.storyboard */; };
-		E04ED2C5259A40F800203ACD /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB91E2756040156080179C97 /* Pods_Domain.framework */; };
 		E04ED2C6259A40F800203ACD /* Pods_Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB91E2756040156080179C97 /* Pods_Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0BC5088259A2E4300122E7D /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = E0BC5086259A2E4300122E7D /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -58,9 +58,13 @@
 
 /* Begin PBXFileReference section */
 		326F37C77EC2154C3319A320 /* Pods-Domain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.debug.xcconfig"; path = "Target Support Files/Pods-Domain/Pods-Domain.debug.xcconfig"; sourceTree = "<group>"; };
+		67536D09D6E8449AF3391510 /* libPods-Global-Domain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Global-Domain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		810A512017CFDC0214E9196A /* Pods-Global-Domain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global-Domain.release.xcconfig"; path = "Target Support Files/Pods-Global-Domain/Pods-Global-Domain.release.xcconfig"; sourceTree = "<group>"; };
 		8AB54D4B13E2F66C9F827537 /* Pods-Domain.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.alpha.xcconfig"; path = "Target Support Files/Pods-Domain/Pods-Domain.alpha.xcconfig"; sourceTree = "<group>"; };
 		93BCF701A063712E632FB38F /* Pods-Domain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.release.xcconfig"; path = "Target Support Files/Pods-Domain/Pods-Domain.release.xcconfig"; sourceTree = "<group>"; };
+		AA2B4AA34A75BB93D4B2EA5B /* Pods-Global-Domain.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global-Domain.alpha.xcconfig"; path = "Target Support Files/Pods-Global-Domain/Pods-Global-Domain.alpha.xcconfig"; sourceTree = "<group>"; };
 		AB91E2756040156080179C97 /* Pods_Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAFF3C2C369A9436C4023F89 /* Pods-Global-Domain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global-Domain.debug.xcconfig"; path = "Target Support Files/Pods-Global-Domain/Pods-Global-Domain.debug.xcconfig"; sourceTree = "<group>"; };
 		E04ED0AE259A2F3E00203ACD /* CommonExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04ED109259A2F6A00203ACD /* StoryboardInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
 		E04ED10A259A2F6A00203ACD /* PostTaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTaskManager.swift; sourceTree = "<group>"; };
@@ -99,8 +103,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E04ED2C5259A40F800203ACD /* Pods_Domain.framework in Frameworks */,
 				E04ED0AF259A2F3E00203ACD /* CommonExtension.framework in Frameworks */,
+				CB22294A9B64E90D30228366 /* libPods-Global-Domain.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +117,9 @@
 				326F37C77EC2154C3319A320 /* Pods-Domain.debug.xcconfig */,
 				93BCF701A063712E632FB38F /* Pods-Domain.release.xcconfig */,
 				8AB54D4B13E2F66C9F827537 /* Pods-Domain.alpha.xcconfig */,
+				CAFF3C2C369A9436C4023F89 /* Pods-Global-Domain.debug.xcconfig */,
+				AA2B4AA34A75BB93D4B2EA5B /* Pods-Global-Domain.alpha.xcconfig */,
+				810A512017CFDC0214E9196A /* Pods-Global-Domain.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -122,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				E04ED0AE259A2F3E00203ACD /* CommonExtension.framework */,
-				AB91E2756040156080179C97 /* Pods_Domain.framework */,
+				67536D09D6E8449AF3391510 /* libPods-Global-Domain.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -386,7 +393,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Domain-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Global-Domain-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -497,7 +504,7 @@
 		};
 		E04ED190259A30D700203ACD /* Alpha */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8AB54D4B13E2F66C9F827537 /* Pods-Domain.alpha.xcconfig */;
+			baseConfigurationReference = AA2B4AA34A75BB93D4B2EA5B /* Pods-Global-Domain.alpha.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -646,7 +653,7 @@
 		};
 		E0BC508C259A2E4300122E7D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 326F37C77EC2154C3319A320 /* Pods-Domain.debug.xcconfig */;
+			baseConfigurationReference = CAFF3C2C369A9436C4023F89 /* Pods-Global-Domain.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -672,7 +679,7 @@
 		};
 		E0BC508D259A2E4300122E7D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93BCF701A063712E632FB38F /* Pods-Domain.release.xcconfig */;
+			baseConfigurationReference = 810A512017CFDC0214E9196A /* Pods-Global-Domain.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

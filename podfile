@@ -20,13 +20,14 @@ def shared_pods
 end
 
 target "LocationStamp" do
-  use_frameworks!
     project "LocationStamp/LocationStamp.project"
     shared_pods
 end
 
-target "Domain" do
-  use_frameworks!
-  project "Domain/Domain.project"
-  shared_pods
-end
+abstract_target 'Global' do
+   pod 'XCoordinator', :configurations => ['Alpha', 'Release']
+   target "Domain" do
+     project "Domain/Domain.project"
+     shared_pods
+   end
+ end

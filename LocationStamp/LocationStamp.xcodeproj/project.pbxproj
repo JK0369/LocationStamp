@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B33B40D1C066159081AA53E /* Pods_LocationStamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B40ED398F672C39A1D5DBC21 /* Pods_LocationStamp.framework */; };
+		98F88A64073618CFFCB430DF /* libPods-LocationStamp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F88C841325BCA497307A91CF /* libPods-LocationStamp.a */; };
 		E04ED0B4259A2F4700203ACD /* CommonExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B2259A2F4700203ACD /* CommonExtension.framework */; };
 		E04ED0B5259A2F4700203ACD /* CommonExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B2259A2F4700203ACD /* CommonExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E04ED0B6259A2F4700203ACD /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B3259A2F4700203ACD /* Domain.framework */; };
@@ -67,7 +67,6 @@
 
 /* Begin PBXFileReference section */
 		6C41563C08047FE5D4D33BC2 /* Pods-LocationStamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationStamp.debug.xcconfig"; path = "Target Support Files/Pods-LocationStamp/Pods-LocationStamp.debug.xcconfig"; sourceTree = "<group>"; };
-		B40ED398F672C39A1D5DBC21 /* Pods_LocationStamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocationStamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04ED0B2259A2F4700203ACD /* CommonExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04ED0B3259A2F4700203ACD /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04ED14E259A2F7600203ACD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -108,6 +107,7 @@
 		E0BC506D259A2E2300122E7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0BC5070259A2E2300122E7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0BC5072259A2E2300122E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F88C841325BCA497307A91CF /* libPods-LocationStamp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationStamp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC436A4521ED11C6E773C889 /* Pods-LocationStamp.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationStamp.alpha.xcconfig"; path = "Target Support Files/Pods-LocationStamp/Pods-LocationStamp.alpha.xcconfig"; sourceTree = "<group>"; };
 		FCFB8711C9EDC356DEBBAD01 /* Pods-LocationStamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationStamp.release.xcconfig"; path = "Target Support Files/Pods-LocationStamp/Pods-LocationStamp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,8 +118,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E04ED0B6259A2F4700203ACD /* Domain.framework in Frameworks */,
-				1B33B40D1C066159081AA53E /* Pods_LocationStamp.framework in Frameworks */,
 				E04ED0B4259A2F4700203ACD /* CommonExtension.framework in Frameworks */,
+				98F88A64073618CFFCB430DF /* libPods-LocationStamp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +276,7 @@
 			children = (
 				E04ED0B2259A2F4700203ACD /* CommonExtension.framework */,
 				E04ED0B3259A2F4700203ACD /* Domain.framework */,
-				B40ED398F672C39A1D5DBC21 /* Pods_LocationStamp.framework */,
+				F88C841325BCA497307A91CF /* libPods-LocationStamp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -292,7 +292,6 @@
 				E0BC505D259A2E2300122E7D /* Sources */,
 				E0BC505E259A2E2300122E7D /* Frameworks */,
 				E0BC505F259A2E2300122E7D /* Resources */,
-				562B6133EE072D3B476755DA /* [CP] Embed Pods Frameworks */,
 				E04ED0B8259A2F4700203ACD /* Embed Frameworks */,
 				E04ED198259A33F000203ACD /* set GoogleService */,
 			);
@@ -375,23 +374,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		562B6133EE072D3B476755DA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LocationStamp/Pods-LocationStamp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LocationStamp/Pods-LocationStamp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LocationStamp/Pods-LocationStamp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E04ED198259A33F000203ACD /* set GoogleService */ = {
