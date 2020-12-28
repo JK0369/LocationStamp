@@ -51,9 +51,9 @@ fastlane ios renew_release_codesign
 fastlane ios common_build
 ```
 common build
-### ios debug
+### ios debug_test
 ```
-fastlane ios debug
+fastlane ios debug_test
 ```
 build debug
 ### ios alpha
