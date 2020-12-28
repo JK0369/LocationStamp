@@ -1,0 +1,136 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "nuxc-pomn-gsfq-yfch"
+
+platform :ios do
+
+  # match
+  desc "Setup certificate & provisioning profiles"
+  private_lane :sync_codesign do|options|
+    match(type:options[:type], readonly: true)
+  end
+
+  lane :sync_codesign_debug do 
+    sync_codesign(type:"development")
+  end
+
+  lane :sync_codesign_alpha do
+    sync_codesign(type:"adhoc")
+  end
+
+  lane :sync_codesign_release do
+    sync_codesign(type:"appstore")
+  end
+
+  # renew cert & profile
+  desc "Fix and renew certificate & provisioning profiles"
+  private_lane :renew_codesign do|options|
+    match(type:options[:type], force_for_new_devices: true)
+  end
+
+  lane :renew_debug_codesign do
+    renew_codesign(type:"development")
+  end
+
+  lane :renew_alpha_codesign do
+    renew_codesign(type:"adhoc")
+  end
+
+  lane :renew_release_codesign do
+    renew_codesign(type:"appstore")
+  end
+
+  # 공통 빌드 lane
+  desc "common build"
+  lane :common_build do |options|
+    cocoapods(
+      clean_install: true,
+      try_repo_update_on_error: true
+    )
+
+    case options[:configuration]
+    when "Debug"
+      scheme = "Debug"
+      export_type = "development"
+    when "Alpha"
+      scheme = "Alpha"
+      export_type = "ad-hoc"
+    else 
+      scheme = "Release"
+      export_type = "app-store"
+    end
+
+    build_app(
+      scheme: "LocationStamp", # app name
+      configuration: scheme,
+      export_method: export_type,
+      output_directory: "./fastlane/distribute",
+      clean: true
+    )
+  end
+
+  # 빌드 호출
+  desc "build debug"
+  lane :debug do
+    sync_codesign(type:"development")
+    build_number_bump()
+    common_build(configuration:"Debug")
+  end
+
+  desc "build alpha"
+  lane :alpha do
+    sync_codesign(type:"adhoc")
+    build_number_bump()
+    common_build(configuration:"Alpha")
+  end
+
+  desc "build release"
+  lane :release do
+    sync_codesign(type:"appstore")
+    build_number_bump()
+    common_build(configuration:"Appstore")
+  end
+
+  # 빌드 번호 업 & commit
+
+  lane :build_number_bump do
+    ensure_git_status_clean
+    increment_build_number(xcodeproj: "./LocationStamp/LocationStamp.xcodeproj")
+    build_number = get_build_number(xcodeproj: "./LocationStamp/LocationStamp.xcodeproj")
+    commit_version_bump(message: "Bump build number to #{build_number} by fastlane", xcodeproj: "./LocationStamp/LocationStamp.xcodeproj")
+    push_to_git_remote
+  end
+
+  # firebase 업로드
+
+  lane :upload_to_firebase do |options|
+    firebase_app_distribution(
+	    remote: "origin", # optional이며 default는 "origin"임
+      app: options[:appid],
+      groups: options[:tester_group],
+      firebase_cli_token: "1//0ef568VLVTAxACgYIARAAGA4SNwF-L9IrrUhtcCpj7UWWL4ivkCqeqNRWL9NwiFuAC3-ZLIuJlQQx4ILYGN8WtSI7Ctl8nkYswXU",
+      ipa_path: "./fastlane/distribute/LocationStamp.ipa"
+    )
+  end
+
+  lane :alpha_upload_to_firebase do
+    alpha()
+    upload_to_firebase(appid: "1:95056125997:ios:f207d810ed09474e49d8a4", tester_group: "inHouse")
+  end
+
+end

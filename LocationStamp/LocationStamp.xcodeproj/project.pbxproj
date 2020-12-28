@@ -40,6 +40,9 @@
 		E04ED18A259A2F7700203ACD /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED16E259A2F7700203ACD /* UIImageView.swift */; };
 		E04ED18B259A2F7700203ACD /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED16F259A2F7700203ACD /* ObservableType.swift */; };
 		E04ED18C259A2F7700203ACD /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED170259A2F7700203ACD /* Double.swift */; };
+		E04ED195259A33E500203ACD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E04ED192259A33E500203ACD /* GoogleService-Info.plist */; };
+		E04ED196259A33E500203ACD /* GoogleService-Info-alpha.plist in Resources */ = {isa = PBXBuildFile; fileRef = E04ED193259A33E500203ACD /* GoogleService-Info-alpha.plist */; };
+		E04ED197259A33E500203ACD /* GoogleService-Info-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = E04ED194259A33E500203ACD /* GoogleService-Info-debug.plist */; };
 		E0BC5065259A2E2300122E7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BC5064259A2E2300122E7D /* AppDelegate.swift */; };
 		E0BC5069259A2E2300122E7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BC5068259A2E2300122E7D /* ViewController.swift */; };
 		E0BC506C259A2E2300122E7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0BC506A259A2E2300122E7D /* Main.storyboard */; };
@@ -95,6 +98,9 @@
 		E04ED16E259A2F7700203ACD /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		E04ED16F259A2F7700203ACD /* ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
 		E04ED170259A2F7700203ACD /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		E04ED192259A33E500203ACD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E04ED193259A33E500203ACD /* GoogleService-Info-alpha.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-alpha.plist"; sourceTree = "<group>"; };
+		E04ED194259A33E500203ACD /* GoogleService-Info-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-debug.plist"; sourceTree = "<group>"; };
 		E0BC5061259A2E2300122E7D /* LocationStamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationStamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BC5064259A2E2300122E7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0BC5068259A2E2300122E7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 		E0BC506D259A2E2300122E7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0BC5070259A2E2300122E7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0BC5072259A2E2300122E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC436A4521ED11C6E773C889 /* Pods-LocationStamp.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationStamp.alpha.xcconfig"; path = "Target Support Files/Pods-LocationStamp/Pods-LocationStamp.alpha.xcconfig"; sourceTree = "<group>"; };
 		FCFB8711C9EDC356DEBBAD01 /* Pods-LocationStamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationStamp.release.xcconfig"; path = "Target Support Files/Pods-LocationStamp/Pods-LocationStamp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +131,7 @@
 			children = (
 				6C41563C08047FE5D4D33BC2 /* Pods-LocationStamp.debug.xcconfig */,
 				FCFB8711C9EDC356DEBBAD01 /* Pods-LocationStamp.release.xcconfig */,
+				FC436A4521ED11C6E773C889 /* Pods-LocationStamp.alpha.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -191,6 +199,9 @@
 		E04ED15B259A2F7700203ACD /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				E04ED193259A33E500203ACD /* GoogleService-Info-alpha.plist */,
+				E04ED194259A33E500203ACD /* GoogleService-Info-debug.plist */,
+				E04ED192259A33E500203ACD /* GoogleService-Info.plist */,
 				E04ED15C259A2F7700203ACD /* ServiceConfiguration.swift */,
 			);
 			path = Service;
@@ -283,6 +294,7 @@
 				E0BC505F259A2E2300122E7D /* Resources */,
 				562B6133EE072D3B476755DA /* [CP] Embed Pods Frameworks */,
 				E04ED0B8259A2F4700203ACD /* Embed Frameworks */,
+				E04ED198259A33F000203ACD /* set GoogleService */,
 			);
 			buildRules = (
 			);
@@ -330,8 +342,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04ED196259A33E500203ACD /* GoogleService-Info-alpha.plist in Resources */,
 				E0BC5071259A2E2300122E7D /* LaunchScreen.storyboard in Resources */,
 				E0BC506E259A2E2300122E7D /* Assets.xcassets in Resources */,
+				E04ED195259A33E500203ACD /* GoogleService-Info.plist in Resources */,
+				E04ED197259A33E500203ACD /* GoogleService-Info-debug.plist in Resources */,
 				E0BC506C259A2E2300122E7D /* Main.storyboard in Resources */,
 				E04ED172259A2F7700203ACD /* Splash.storyboard in Resources */,
 			);
@@ -378,6 +393,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LocationStamp/Pods-LocationStamp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E04ED198259A33F000203ACD /* set GoogleService */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "set GoogleService";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH_TO_GOOGLE_PLISTS=\"${PROJECT_DIR}/LocationStamp/Application/Firebase\"\n\ncase \"${CONFIGURATION}\" in\n\n  \"Alpha\" )  \ncp -r \"$SRCROOT/LocationStamp/Service/GoogleService-Info-alpha.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n\n  \"Debug\" )\ncp -r \"$SRCROOT/LocationStamp/Service/GoogleService-Info-alpha.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n\n  \"Release\" )  \ncp -r \"$SRCROOT/LocationStamp/Service/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n\n*)\n;;\nesac\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -440,6 +473,90 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E04ED18D259A30A700203ACD /* Alpha */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Alpha;
+		};
+		E04ED18E259A30A700203ACD /* Alpha */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC436A4521ED11C6E773C889 /* Pods-LocationStamp.alpha.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = SS7U83UJNK;
+				INFOPLIST_FILE = LocationStamp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jake.LocationStamp.alpha;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.jake.LocationStamp.alpha";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Alpha;
+		};
 		E0BC5073259A2E2300122E7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -494,7 +611,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -549,6 +666,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -562,15 +680,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = SS7U83UJNK;
 				INFOPLIST_FILE = LocationStamp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jake.LocationStamp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jake.LocationStamp.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.jake.LocationStamp.debug";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -582,15 +703,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = SS7U83UJNK;
 				INFOPLIST_FILE = LocationStamp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jake.LocationStamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.jake.LocationStamp";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -603,6 +727,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E0BC5073259A2E2300122E7D /* Debug */,
+				E04ED18D259A30A700203ACD /* Alpha */,
 				E0BC5074259A2E2300122E7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -612,6 +737,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E0BC5076259A2E2300122E7D /* Debug */,
+				E04ED18E259A30A700203ACD /* Alpha */,
 				E0BC5077259A2E2300122E7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
