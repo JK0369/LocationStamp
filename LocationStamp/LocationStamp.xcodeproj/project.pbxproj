@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E04ED0B4259A2F4700203ACD /* CommonExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B2259A2F4700203ACD /* CommonExtension.framework */; };
-		E04ED0B5259A2F4700203ACD /* CommonExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B2259A2F4700203ACD /* CommonExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E04ED0B6259A2F4700203ACD /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B3259A2F4700203ACD /* Domain.framework */; };
-		E04ED0B7259A2F4700203ACD /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B3259A2F4700203ACD /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E04ED171259A2F7700203ACD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED14E259A2F7600203ACD /* Constants.swift */; };
 		E04ED172259A2F7700203ACD /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04ED150259A2F7700203ACD /* Splash.storyboard */; };
 		E04ED173259A2F7700203ACD /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED152259A2F7700203ACD /* SplashCoordinator.swift */; };
@@ -48,24 +46,7 @@
 		E0BC506E259A2E2300122E7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0BC506D259A2E2300122E7D /* Assets.xcassets */; };
 		E0BC5071259A2E2300122E7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0BC506F259A2E2300122E7D /* LaunchScreen.storyboard */; };
 		E0FA74C2259AD10B005E198D /* Pods_LocationStamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFAF1BF5583D08BAFFEBC930 /* Pods_LocationStamp.framework */; };
-		E0FA74C3259AD10B005E198D /* Pods_LocationStamp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFAF1BF5583D08BAFFEBC930 /* Pods_LocationStamp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		E04ED0B8259A2F4700203ACD /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E04ED0B7259A2F4700203ACD /* Domain.framework in Embed Frameworks */,
-				E0FA74C3259AD10B005E198D /* Pods_LocationStamp.framework in Embed Frameworks */,
-				E04ED0B5259A2F4700203ACD /* CommonExtension.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6C41563C08047FE5D4D33BC2 /* Pods-LocationStamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationStamp.debug.xcconfig"; path = "Target Support Files/Pods-LocationStamp/Pods-LocationStamp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -294,7 +275,6 @@
 				E0BC505D259A2E2300122E7D /* Sources */,
 				E0BC505E259A2E2300122E7D /* Frameworks */,
 				E0BC505F259A2E2300122E7D /* Resources */,
-				E04ED0B8259A2F4700203ACD /* Embed Frameworks */,
 				E04ED198259A33F000203ACD /* set GoogleService */,
 				38AC73A8EDC1B79EC0897339 /* [CP] Embed Pods Frameworks */,
 			);
