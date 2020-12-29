@@ -1,4 +1,5 @@
 platform :ios, '13.0'
+use_frameworks!
 
 workspace 'LocationStamp'
 project 'LocationStamp/LocationStamp.project'
@@ -24,10 +25,7 @@ target "LocationStamp" do
     shared_pods
 end
 
-abstract_target 'Global' do
-   pod 'XCoordinator', :configurations => ['Alpha', 'Release']
-   target "Domain" do
-     project "Domain/Domain.project"
-     shared_pods
-   end
- end
+target "Domain" do
+  project "Domain/Domain.project"
+  shared_pods
+end
