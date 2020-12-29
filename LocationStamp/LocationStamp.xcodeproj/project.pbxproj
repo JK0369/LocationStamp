@@ -293,6 +293,7 @@
 				E04ED198259A33F000203ACD /* set GoogleService */,
 				38AC73A8EDC1B79EC0897339 /* [CP] Embed Pods Frameworks */,
 				E0B37E8F259AFF15004B257D /* Embed Frameworks */,
+				E09D95E5259B95DF00DE1385 /* [CP] Copy Pods  Resource */,
 			);
 			buildRules = (
 			);
@@ -409,6 +410,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "PATH_TO_GOOGLE_PLISTS=\"${PROJECT_DIR}/LocationStamp/Application/Firebase\"\n\ncase \"${CONFIGURATION}\" in\n\n  \"Alpha\" )  \ncp -r \"$SRCROOT/LocationStamp/Service/GoogleService-Info-alpha.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n\n  \"Debug\" )\ncp -r \"$SRCROOT/LocationStamp/Service/GoogleService-Info-alpha.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n\n  \"Release\" )  \ncp -r \"$SRCROOT/LocationStamp/Service/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n\n*)\n;;\nesac\n";
+		};
+		E09D95E5259B95DF00DE1385 /* [CP] Copy Pods  Resource */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods  Resource";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LocationStamp/Pods-LocationStamp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
