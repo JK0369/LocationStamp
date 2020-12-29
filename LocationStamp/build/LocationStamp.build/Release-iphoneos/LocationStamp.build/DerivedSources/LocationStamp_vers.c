@@ -1,5 +1,5 @@
  extern const unsigned char LocationStampVersionString[];
  extern const double LocationStampVersionNumber;
 
- const unsigned char LocationStampVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:LocationStamp  PROJECT:LocationStamp-22" "\n";
- const double LocationStampVersionNumber __attribute__ ((used)) = (double)22.;
+ const unsigned char LocationStampVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:LocationStamp  PROJECT:LocationStamp-24" "\n";
+ const double LocationStampVersionNumber __attribute__ ((used)) = (double)24.;
