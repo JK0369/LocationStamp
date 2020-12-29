@@ -4,7 +4,7 @@ storage_mode("git")
 
 type("adhoc") # The default type, can be: appstore, adhoc, enterprise or development
 
-app_identifier(["com.jake.LocationStamp.debug", "com.jake.LocationStamp.alpha", "com.jake.LocationStamp"])
+app_identifier("com.jake.LocationStamp.alpha")
 username("palatable7@naver.com") # Your Apple Developer Portal username
 
 # For all available options run `fastlane match --help`

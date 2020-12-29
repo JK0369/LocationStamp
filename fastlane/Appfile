@@ -1,4 +1,4 @@
-app_identifier(["com.jake.LocationStamp.debug", "com.jake.LocationStamp.alpha", "com.jake.LocationStamp"]) # The bundle identifier of your app
+app_identifier("com.jake.LocationStamp.alpha") # The bundle identifier of your app
 apple_id("palatable7@naver.com") # Your Apple email address
 
 
