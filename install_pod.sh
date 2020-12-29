@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cp -rf .netrc ~/.netrc
+cp -rf .personal ~/.personal
 bundle exec pod install
