@@ -1,5 +1,6 @@
 platform :ios, '11.0'
 use_frameworks!
+inhibit_all_warnings!
 
 workspace 'LocationStamp'
 project 'LocationStamp/LocationStamp.project'
@@ -20,12 +21,12 @@ def shared_pods
     pod 'KeychainAccess'
 end
 
-target "LocationStamp" do
-    project "LocationStamp/LocationStamp.project"
+target 'LocationStamp' do
+    project 'LocationStamp/LocationStamp.project'
     shared_pods
 end
 
-target "Domain" do
-  project "Domain/Domain.project"
+target 'Domain' do
+  project 'Domain/Domain.project'
   shared_pods
 end
