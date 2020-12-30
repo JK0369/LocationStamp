@@ -2,13 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:CommonExtension/CommonExtension.xcodeproj">
+      location = "group:LocationStamp/LocationStamp.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Domain/Domain.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:LocationStamp/LocationStamp.xcodeproj">
+      location = "group:CommonExtension/CommonExtension.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
