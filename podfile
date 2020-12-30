@@ -19,6 +19,7 @@ def shared_pods
     pod 'Moya/RxSwift'
     pod 'XCoordinator'
     pod 'KeychainAccess'
+    pod 'Firebase'
 end
 
 target 'LocationStamp' do

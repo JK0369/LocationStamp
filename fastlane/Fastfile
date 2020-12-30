@@ -123,7 +123,7 @@ platform :ios do
 	    remote: "origin", # optional이며 default는 "origin"임
       app: options[:appid],
       groups: options[:tester_group],
-      firebase_cli_token: "1//0ef568VLVTAxACgYIARAAGA4SNwF-L9IrrUhtcCpj7UWWL4ivkCqeqNRWL9NwiFuAC3-ZLIuJlQQx4ILYGN8WtSI7Ctl8nkYswXU",
+      firebase_cli_token: "1//0eV8r_D1jw4m6CgYIARAAGA4SNwF-L9Ir86OpMGkbhgqcov8WLFn_QCXYnCEJFWN0eSY7gXuLxBguLt8L4LF2wYuoIaKEyG9_Y6I",
       ipa_path: "./fastlane/distribute/LocationStamp.ipa"
     )
   end
