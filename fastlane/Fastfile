@@ -80,8 +80,7 @@ platform :ios do
       configuration: scheme,
       export_method: export_type,
       output_directory: "./fastlane/distribute",
-      clean: true,
-      include_bitcode: false
+      clean: true
     )
   end
 
