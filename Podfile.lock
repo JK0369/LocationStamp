@@ -1,8 +1,6 @@
 PODS:
   - Alamofire (5.4.1)
   - AnyFormatKit (2.0.6)
-  - Firebase (7.3.0):
-    - Firebase/Core (= 7.3.0)
   - Firebase/Core (7.3.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 7.3.0)
@@ -92,7 +90,7 @@ PODS:
 
 DEPENDENCIES:
   - AnyFormatKit
-  - Firebase
+  - Firebase/Core
   - JGProgressHUD
   - KeychainAccess
   - Kingfisher
@@ -154,6 +152,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
 
-PODFILE CHECKSUM: d15831f00e3e574945a15db395473b3b81830474
+PODFILE CHECKSUM: 1717be309600fbe5a3c7bfcf7fc17183f5047495
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

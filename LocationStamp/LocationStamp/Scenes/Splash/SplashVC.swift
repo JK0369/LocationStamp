@@ -10,6 +10,7 @@ import CommonExtension
 import Domain
 import RxSwift
 import RxCocoa
+import Moya
 
 final class SplashVC: BaseViewController, StoryboardInitializable, ErrorPresentable {
     static var storyboardName: String = Constants.Storyboard.splash
@@ -28,12 +29,25 @@ final class SplashVC: BaseViewController, StoryboardInitializable, ErrorPresenta
         super.init(coder: coder)
     }
 
-    // MARK: - View Lifr Cycle
+    // MARK: - View Lifr Cyclehvc
 
     override func viewDidLoad() {
         super.viewDidLoad()
         networkListener = .on
         setupErrorHandlerBinding()
+
+//        let usecase = MoyaProvider<ReverseGeoCodingTarget>.makeProvider()
+//        let request = ReverseGeoCodingRequest(latitude: 37.325130462646484, longitude: 127.1183853149414)
+//        usecase.rx.request(.reverseGeoCoding(request))
+//            .observeOn(MainScheduler.instance)
+//            .subscribe { [weak self] (result) in
+//                switch result {
+//                case .success(let response):
+//                    print(response)
+//                case .error(let error):
+//                    print(error)
+//                }
+//            }.disposed(by: bag)
     }
 
     private func setupInputBinding() {

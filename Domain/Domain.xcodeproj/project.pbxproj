@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0FF70875E7FF3F2E1B1751DA /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC17B8F327E3B3542538F16 /* Pods_Domain.framework */; };
+		E03CE581259CD3E600CA17D9 /* ReverseGeoCodingTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03CE580259CD3E600CA17D9 /* ReverseGeoCodingTarget.swift */; };
+		E03CE583259CD67200CA17D9 /* ReverseGeoCodingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03CE582259CD67200CA17D9 /* ReverseGeoCodingRequest.swift */; };
+		E03CE585259CD70F00CA17D9 /* ReverseGeoCodingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03CE584259CD70F00CA17D9 /* ReverseGeoCodingResponse.swift */; };
 		E04ED0AF259A2F3E00203ACD /* CommonExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0AE259A2F3E00203ACD /* CommonExtension.framework */; };
 		E04ED0B0259A2F3E00203ACD /* CommonExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0AE259A2F3E00203ACD /* CommonExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E04ED131259A2F6A00203ACD /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED109259A2F6A00203ACD /* StoryboardInitializable.swift */; };
@@ -25,7 +28,6 @@
 		E04ED13D259A2F6A00203ACD /* AppServiceSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED11A259A2F6A00203ACD /* AppServiceSetting.swift */; };
 		E04ED13E259A2F6A00203ACD /* BaseResponsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED11B259A2F6A00203ACD /* BaseResponsable.swift */; };
 		E04ED13F259A2F6A00203ACD /* AppInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED11C259A2F6A00203ACD /* AppInfoHeader.swift */; };
-		E04ED140259A2F6A00203ACD /* OTPTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED11E259A2F6A00203ACD /* OTPTarget.swift */; };
 		E04ED141259A2F6A00203ACD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED120259A2F6A00203ACD /* Constants.swift */; };
 		E04ED142259A2F6A00203ACD /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED122259A2F6A00203ACD /* UIView.swift */; };
 		E04ED143259A2F6A00203ACD /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED123259A2F6A00203ACD /* ObservableType.swift */; };
@@ -65,6 +67,9 @@
 		AB91E2756040156080179C97 /* Pods_Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC17B8F327E3B3542538F16 /* Pods_Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFF3C2C369A9436C4023F89 /* Pods-Global-Domain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Global-Domain.debug.xcconfig"; path = "Target Support Files/Pods-Global-Domain/Pods-Global-Domain.debug.xcconfig"; sourceTree = "<group>"; };
+		E03CE580259CD3E600CA17D9 /* ReverseGeoCodingTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeoCodingTarget.swift; sourceTree = "<group>"; };
+		E03CE582259CD67200CA17D9 /* ReverseGeoCodingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeoCodingRequest.swift; sourceTree = "<group>"; };
+		E03CE584259CD70F00CA17D9 /* ReverseGeoCodingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeoCodingResponse.swift; sourceTree = "<group>"; };
 		E04ED0AE259A2F3E00203ACD /* CommonExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04ED109259A2F6A00203ACD /* StoryboardInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
 		E04ED10A259A2F6A00203ACD /* PostTaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTaskManager.swift; sourceTree = "<group>"; };
@@ -81,7 +86,6 @@
 		E04ED11A259A2F6A00203ACD /* AppServiceSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppServiceSetting.swift; sourceTree = "<group>"; };
 		E04ED11B259A2F6A00203ACD /* BaseResponsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponsable.swift; sourceTree = "<group>"; };
 		E04ED11C259A2F6A00203ACD /* AppInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoHeader.swift; sourceTree = "<group>"; };
-		E04ED11E259A2F6A00203ACD /* OTPTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPTarget.swift; sourceTree = "<group>"; };
 		E04ED120259A2F6A00203ACD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E04ED122259A2F6A00203ACD /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E04ED123259A2F6A00203ACD /* ObservableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 			children = (
 				E04ED10F259A2F6A00203ACD /* SmsOtpResponse.swift */,
 				E04ED110259A2F6A00203ACD /* SmsOtpRequest.swift */,
+				E03CE582259CD67200CA17D9 /* ReverseGeoCodingRequest.swift */,
+				E03CE584259CD70F00CA17D9 /* ReverseGeoCodingResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,7 +205,7 @@
 		E04ED11D259A2F6A00203ACD /* TargetType */ = {
 			isa = PBXGroup;
 			children = (
-				E04ED11E259A2F6A00203ACD /* OTPTarget.swift */,
+				E03CE580259CD3E600CA17D9 /* ReverseGeoCodingTarget.swift */,
 			);
 			path = TargetType;
 			sourceTree = "<group>";
@@ -425,10 +431,11 @@
 				E04ED145259A2F6A00203ACD /* BaseViewController.swift in Sources */,
 				E04ED144259A2F6A00203ACD /* KeyValueStore.swift in Sources */,
 				E04ED136259A2F6A00203ACD /* ErrorHandleable.swift in Sources */,
-				E04ED140259A2F6A00203ACD /* OTPTarget.swift in Sources */,
+				E03CE583259CD67200CA17D9 /* ReverseGeoCodingRequest.swift in Sources */,
 				E04ED13B259A2F6A00203ACD /* RequestLogginPlugin.swift in Sources */,
 				E04ED146259A2F6A00203ACD /* ToastMessageView.swift in Sources */,
 				E04ED134259A2F6A00203ACD /* SmsOtpResponse.swift in Sources */,
+				E03CE581259CD3E600CA17D9 /* ReverseGeoCodingTarget.swift in Sources */,
 				E04ED133259A2F6A00203ACD /* MoyaProviderExtension.swift in Sources */,
 				E04ED13F259A2F6A00203ACD /* AppInfoHeader.swift in Sources */,
 				E04ED138259A2F6A00203ACD /* BaseTargetType.swift in Sources */,
@@ -441,6 +448,7 @@
 				E04ED142259A2F6A00203ACD /* UIView.swift in Sources */,
 				E04ED149259A2F6A00203ACD /* DialogView.swift in Sources */,
 				E04ED13C259A2F6A00203ACD /* BaseHeader.swift in Sources */,
+				E03CE585259CD70F00CA17D9 /* ReverseGeoCodingResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

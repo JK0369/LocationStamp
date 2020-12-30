@@ -6,39 +6,29 @@
 //
 
 import UIKit
-
-enum Person {
-    case name(String)
-    case age(Int)
-}
+import Domain
+import Moya
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let bag = DisposeBag()
 
-        let person: Person = .name("이름")
-
-        //
-switch person {
-case .name(let nameValue):
-    print(nameValue)
-case .age(let ageValue):
-    print(ageValue)
-}
-
-        //
-if case let Person.name(nameValue) = person {
-    print(nameValue)
-}
-
-guard case let Person.name(nameValue) = person else {
-    print("not exist")
-    return
-}
-print(nameValue)
+        let usecase = MoyaProvider<ReverseGeoCodingTarget>.makeProvider()
+        let request = ReverseGeoCodingRequest(latitude: 37.325130462646484, longitude: 127.1183853149414)
+        usecase.rx.request(.reverseGeoCoding(request))
+            .observeOn(MainScheduler.instance)
+            .subscribe { [weak self] (result) in
+                switch result {
+                case .success(let response):
+                    print(response)
+                case .error(let error):
+                    print(error)
+                }
+            }.disposed(by: bag)
     }
-
-
 }
 

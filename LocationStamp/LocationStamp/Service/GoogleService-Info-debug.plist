@@ -19,15 +19,17 @@
 	<key>STORAGE_BUCKET</key>
 	<string>locationstamp-4eb20.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
+	<key>New item</key>
+	<string></string>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:95056125997:ios:b5e848803a401f7149d8a4</string>
 </dict>

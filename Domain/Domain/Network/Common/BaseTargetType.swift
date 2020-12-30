@@ -10,19 +10,13 @@ import Moya
 
 public protocol BaseTargetType: TargetType { }
 extension BaseTargetType {
-    public var baseURL: URL {
-        return AppServiceSetting.shared.configurations.serviceBaseURL
-    }
 
     public var sampleData: Data {
         return Data()
     }
 
     public var headers: [String: String]? {
-        var header = ["Content-Type": "application/json"]
-        let baseHeader = BaseHeader.fetch()
-        header["app-device-os-version"] = baseHeader.osVersion
-        header["app-version"] = baseHeader.appVersion
+        let header = ["Content-Type": "application/json"]
         return header
     }
 }

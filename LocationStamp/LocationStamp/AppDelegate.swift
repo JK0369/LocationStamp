@@ -6,32 +6,38 @@
 //
 
 import UIKit
+import Domain
+import CommonExtension
+import RxSwift
+import RxCocoa
 import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    private let bag = DisposeBag()
+    private let keychain = KeychainService.shared
+    var postTaskManager = PostTaskManager()
+    lazy var router = SplashCoordinator(rootViewController: UINavigationController(), postTaskManager: self.postTaskManager, initialRoute: .splash).strongRouter
+    var window: UIWindow?
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         FirebaseApp.configure()
 
+        window = UIWindow(frame: UIScreen.main.bounds)
+        router.setRoot(for: window!)
+        window?.makeKeyAndVisible()
+
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    private func removeOldKeychainVluesIfNeeded() {
+        guard UserDefaults.isFirstLaunch() else {
+            return
+        }
+        keychain.deleteUserInfo()
     }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
 
 }
 
