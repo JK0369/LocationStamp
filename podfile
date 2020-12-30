@@ -30,3 +30,4 @@ target 'Domain' do
   project 'Domain/Domain.project'
   shared_pods
 end
+

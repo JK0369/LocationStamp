@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E04ED0B4259A2F4700203ACD /* CommonExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B2259A2F4700203ACD /* CommonExtension.framework */; };
-		E04ED0B6259A2F4700203ACD /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B3259A2F4700203ACD /* Domain.framework */; };
 		E04ED171259A2F7700203ACD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED14E259A2F7600203ACD /* Constants.swift */; };
 		E04ED172259A2F7700203ACD /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04ED150259A2F7700203ACD /* Splash.storyboard */; };
 		E04ED173259A2F7700203ACD /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED152259A2F7700203ACD /* SplashCoordinator.swift */; };
@@ -47,6 +45,10 @@
 		E0BC506C259A2E2300122E7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0BC506A259A2E2300122E7D /* Main.storyboard */; };
 		E0BC506E259A2E2300122E7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0BC506D259A2E2300122E7D /* Assets.xcassets */; };
 		E0BC5071259A2E2300122E7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0BC506F259A2E2300122E7D /* LaunchScreen.storyboard */; };
+		E0DF1A9B259C3AC400F24024 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B3259A2F4700203ACD /* Domain.framework */; };
+		E0DF1A9C259C3AC400F24024 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B3259A2F4700203ACD /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E0DF1A9D259C3AC600F24024 /* CommonExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B2259A2F4700203ACD /* CommonExtension.framework */; };
+		E0DF1A9E259C3AC600F24024 /* CommonExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B2259A2F4700203ACD /* CommonExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,7 +58,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E0DF1A9C259C3AC400F24024 /* Domain.framework in Embed Frameworks */,
 				E0B37E8E259AFF15004B257D /* Pods_LocationStamp.framework in Embed Frameworks */,
+				E0DF1A9E259C3AC600F24024 /* CommonExtension.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,7 +68,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6C41563C08047FE5D4D33BC2 /* Pods-LocationStamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationStamp.debug.xcconfig"; path = "Target Support Files/Pods-LocationStamp/Pods-LocationStamp.debug.xcconfig"; sourceTree = "<group>"; };
+		25BD59F264FD388B9775AA30 /* Pods-LocationStamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationStamp.debug.xcconfig"; path = "Target Support Files/Pods-LocationStamp/Pods-LocationStamp.debug.xcconfig"; sourceTree = "<group>"; };
+		A4320E7806818462CEFE67DC /* Pods-LocationStamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationStamp.release.xcconfig"; path = "Target Support Files/Pods-LocationStamp/Pods-LocationStamp.release.xcconfig"; sourceTree = "<group>"; };
 		E04ED0B2259A2F4700203ACD /* CommonExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04ED0B3259A2F4700203ACD /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04ED14E259A2F7600203ACD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -106,8 +111,7 @@
 		E0BC5070259A2E2300122E7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0BC5072259A2E2300122E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFAF1BF5583D08BAFFEBC930 /* Pods_LocationStamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocationStamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC436A4521ED11C6E773C889 /* Pods-LocationStamp.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationStamp.alpha.xcconfig"; path = "Target Support Files/Pods-LocationStamp/Pods-LocationStamp.alpha.xcconfig"; sourceTree = "<group>"; };
-		FCFB8711C9EDC356DEBBAD01 /* Pods-LocationStamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationStamp.release.xcconfig"; path = "Target Support Files/Pods-LocationStamp/Pods-LocationStamp.release.xcconfig"; sourceTree = "<group>"; };
+		F22B71B58036D1449F7DD9F1 /* Pods-LocationStamp.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationStamp.alpha.xcconfig"; path = "Target Support Files/Pods-LocationStamp/Pods-LocationStamp.alpha.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,21 +119,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E04ED0B6259A2F4700203ACD /* Domain.framework in Frameworks */,
+				E0DF1A9B259C3AC400F24024 /* Domain.framework in Frameworks */,
 				E0B37E8D259AFF15004B257D /* Pods_LocationStamp.framework in Frameworks */,
-				E04ED0B4259A2F4700203ACD /* CommonExtension.framework in Frameworks */,
+				E0DF1A9D259C3AC600F24024 /* CommonExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DE22D9422BC464F9AB0B9C4E /* Pods */ = {
+		1F44DC0B849DCEAA05CB53E3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6C41563C08047FE5D4D33BC2 /* Pods-LocationStamp.debug.xcconfig */,
-				FCFB8711C9EDC356DEBBAD01 /* Pods-LocationStamp.release.xcconfig */,
-				FC436A4521ED11C6E773C889 /* Pods-LocationStamp.alpha.xcconfig */,
+				25BD59F264FD388B9775AA30 /* Pods-LocationStamp.debug.xcconfig */,
+				F22B71B58036D1449F7DD9F1 /* Pods-LocationStamp.alpha.xcconfig */,
+				A4320E7806818462CEFE67DC /* Pods-LocationStamp.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -236,8 +240,8 @@
 			children = (
 				E0BC5063259A2E2300122E7D /* LocationStamp */,
 				E0BC5062259A2E2300122E7D /* Products */,
-				DE22D9422BC464F9AB0B9C4E /* Pods */,
 				F0A2E5B45375E04B9A2DCAE9 /* Frameworks */,
+				1F44DC0B849DCEAA05CB53E3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -523,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -537,7 +541,7 @@
 		};
 		E04ED18E259A30A700203ACD /* Alpha */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC436A4521ED11C6E773C889 /* Pods-LocationStamp.alpha.xcconfig */;
+			baseConfigurationReference = F22B71B58036D1449F7DD9F1 /* Pods-LocationStamp.alpha.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -610,7 +614,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -667,7 +671,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -681,7 +685,7 @@
 		};
 		E0BC5076259A2E2300122E7D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C41563C08047FE5D4D33BC2 /* Pods-LocationStamp.debug.xcconfig */;
+			baseConfigurationReference = 25BD59F264FD388B9775AA30 /* Pods-LocationStamp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -704,7 +708,7 @@
 		};
 		E0BC5077259A2E2300122E7D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCFB8711C9EDC356DEBBAD01 /* Pods-LocationStamp.release.xcconfig */;
+			baseConfigurationReference = A4320E7806818462CEFE67DC /* Pods-LocationStamp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
