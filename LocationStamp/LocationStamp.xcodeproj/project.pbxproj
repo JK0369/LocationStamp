@@ -45,6 +45,9 @@
 		E0BC506C259A2E2300122E7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0BC506A259A2E2300122E7D /* Main.storyboard */; };
 		E0BC506E259A2E2300122E7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0BC506D259A2E2300122E7D /* Assets.xcassets */; };
 		E0BC5071259A2E2300122E7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0BC506F259A2E2300122E7D /* LaunchScreen.storyboard */; };
+		E0CB1890259CE904001BD958 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB188F259CE904001BD958 /* InfoVC.swift */; };
+		E0CB1892259CE909001BD958 /* InfoVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB1891259CE909001BD958 /* InfoVM.swift */; };
+		E0CB1894259CE90F001BD958 /* InfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB1893259CE90F001BD958 /* InfoBuilder.swift */; };
 		E0DF1A9B259C3AC400F24024 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B3259A2F4700203ACD /* Domain.framework */; };
 		E0DF1A9C259C3AC400F24024 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B3259A2F4700203ACD /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0DF1A9D259C3AC600F24024 /* CommonExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B2259A2F4700203ACD /* CommonExtension.framework */; };
@@ -110,6 +113,9 @@
 		E0BC506D259A2E2300122E7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0BC5070259A2E2300122E7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0BC5072259A2E2300122E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0CB188F259CE904001BD958 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		E0CB1891259CE909001BD958 /* InfoVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVM.swift; sourceTree = "<group>"; };
+		E0CB1893259CE90F001BD958 /* InfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBuilder.swift; sourceTree = "<group>"; };
 		EFAF1BF5583D08BAFFEBC930 /* Pods_LocationStamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocationStamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F22B71B58036D1449F7DD9F1 /* Pods-LocationStamp.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationStamp.alpha.xcconfig"; path = "Target Support Files/Pods-LocationStamp/Pods-LocationStamp.alpha.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +192,9 @@
 				E04ED156259A2F7700203ACD /* SplashBuilder.swift */,
 				E04ED157259A2F7700203ACD /* SplashVC.swift */,
 				E04ED158259A2F7700203ACD /* SplashVM.swift */,
+				E0CB188F259CE904001BD958 /* InfoVC.swift */,
+				E0CB1891259CE909001BD958 /* InfoVM.swift */,
+				E0CB1893259CE90F001BD958 /* InfoBuilder.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -425,6 +434,7 @@
 				E0BC5069259A2E2300122E7D /* ViewController.swift in Sources */,
 				E0BC5065259A2E2300122E7D /* AppDelegate.swift in Sources */,
 				E04ED185259A2F7700203ACD /* UITextField.swift in Sources */,
+				E0CB1890259CE904001BD958 /* InfoVC.swift in Sources */,
 				E04ED179259A2F7700203ACD /* ServiceConfiguration.swift in Sources */,
 				E04ED187259A2F7700203ACD /* UIButton.swift in Sources */,
 				E04ED182259A2F7700203ACD /* Reactive.swift in Sources */,
@@ -444,12 +454,14 @@
 				E04ED17A259A2F7700203ACD /* CALayer.swift in Sources */,
 				E04ED188259A2F7700203ACD /* UIViewController.swift in Sources */,
 				E04ED17C259A2F7700203ACD /* UIView.swift in Sources */,
+				E0CB1892259CE909001BD958 /* InfoVM.swift in Sources */,
 				E04ED177259A2F7700203ACD /* SplashVM.swift in Sources */,
 				E04ED183259A2F7700203ACD /* Integer.swift in Sources */,
 				E04ED17B259A2F7700203ACD /* Date.swift in Sources */,
 				E04ED18B259A2F7700203ACD /* ObservableType.swift in Sources */,
 				E04ED18C259A2F7700203ACD /* Double.swift in Sources */,
 				E04ED178259A2F7700203ACD /* Keychain.swift in Sources */,
+				E0CB1894259CE90F001BD958 /* InfoBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

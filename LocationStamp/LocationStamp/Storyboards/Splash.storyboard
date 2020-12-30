@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="141" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--InfoVC-->
         <scene sceneID="OH7-3M-KMc">
             <objects>
-                <viewController id="LmX-8R-OJd" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoVC" id="LmX-8R-OJd" customClass="InfoVC" customModule="LocationStamp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Vc-0e-BIc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

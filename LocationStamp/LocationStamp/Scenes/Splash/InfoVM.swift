@@ -1,8 +1,8 @@
 //
-//  SplashVM.swift
-//  BaseProject
+//  InfoVM.swift
+//  LocationStamp
 //
-//  Created by 김종권 on 2020/12/27.
+//  Created by 김종권 on 2020/12/31.
 //
 
 import Foundation
@@ -10,12 +10,10 @@ import CommonExtension
 import Domain
 import RxSwift
 import RxCocoa
-import XCoordinator
 
-class SplashVM: ErrorHandleable {
+class InfoVM: ErrorHandleable {
 
     struct Dependencies {
-        let router: UnownedRouter<SplashRoute>
     }
 
     init(dependencies: Dependencies) {
@@ -34,12 +32,6 @@ class SplashVM: ErrorHandleable {
     // MARK: - Handling View Input
 
     func viewWillAppear() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-            self?.routeToInfo()
-        }
-    }
 
-    private func routeToInfo() {
-        dependencies.router.trigger(.popAndPush(.info))
     }
 }

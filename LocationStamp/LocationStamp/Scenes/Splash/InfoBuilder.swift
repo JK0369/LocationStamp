@@ -1,18 +1,18 @@
 //
-//  SplashBuilder.swift
-//  BaseProject
+//  InfoBuilder.swift
+//  LocationStamp
 //
-//  Created by 김종권 on 2020/12/27.
+//  Created by 김종권 on 2020/12/31.
 //
 
 import Foundation
 import Domain
 import XCoordinator
 
-class SplashBuilder {
-    static func build(router: UnownedRouter<SplashRoute>, postTaskManager: PostTaskManager) -> SplashVC {
-        let dependencies = SplashVM.Dependencies(
-            router: router
+class InfoBuilder {
+    static func build(router: UnownedRouter<SplashRoute>, postTaskManager: PostTaskManager) -> InfoVC {
+        let dependencies = InfoVM.Dependencies(
+//            router: router,
 //            postTaskManager: postTaskManager,
 //            keychain: KeychainService.shared,
 //            appStatusUseCase: MoyaProvider<AppConfigTarget>.makeProvider(),
@@ -20,7 +20,7 @@ class SplashBuilder {
 //            accountUseCase: MoyaProvider<AccountTarget>.makeProvider(),
 //            tapSetting: TapServiceSetting.shared
         )
-        let vm = SplashVM(dependencies: dependencies)
-        return SplashVC.instantiate(viewModel: vm)
+        let vm = InfoVM(dependencies: dependencies)
+        return InfoVC.instantiate(viewModel: vm)
     }
 }

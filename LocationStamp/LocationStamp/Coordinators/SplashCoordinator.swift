@@ -12,6 +12,9 @@ import XCoordinator
 
 indirect enum SplashRoute: Route {
     case splash
+    case info
+
+    case popAndPush(SplashRoute)
 }
 
 class SplashCoordinator: BaseNavigationCoordinator<SplashRoute> {
@@ -25,27 +28,17 @@ class SplashCoordinator: BaseNavigationCoordinator<SplashRoute> {
 
     override func prepareTransition(for route: SplashRoute) -> NavigationTransition {
         rootViewController.setNavigationBarHidden(true, animated: false)
-
         switch route {
         case .splash:
             let vc = SplashBuilder.build(router: unownedRouter, postTaskManager: postTaskManager)
             return .set([vc])
-            
-//        case let .showUpdateDialog(message, onUpdate):
-//            let vc = VersionUpdateDialogVC.instantiate()
-//            vc.message = message
-//            vc.onUpdate
-//                .bind(onNext: onUpdate)
-//                .disposed(by: vc.bag)
-//            return .present(vc)
 
-//        case let .terms(phoneNumber, email, smsOTP):
-//            let termsCoordinator = TermsCoordinator(
-//                rootViewController: rootViewController,
-//                postTaskManager: postTaskManager,
-//                initialRoute: .terms(phoneNumber: phoneNumber, email: email, smsOTP: smsOTP)
-//            )
-//            return .addChild(termsCoordinator)
+        case .info:
+            let vc = InfoBuilder.build(router: unownedRouter, postTaskManager: postTaskManager)
+            return .push(vc)
+
+        case .popAndPush(let route):
+            return popAndPush(route: route)
         }
     }
 
