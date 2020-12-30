@@ -36,18 +36,18 @@ final class SplashVC: BaseViewController, StoryboardInitializable, ErrorPresenta
         networkListener = .on
         setupErrorHandlerBinding()
 
-//        let usecase = MoyaProvider<ReverseGeoCodingTarget>.makeProvider()
-//        let request = ReverseGeoCodingRequest(latitude: 37.325130462646484, longitude: 127.1183853149414)
-//        usecase.rx.request(.reverseGeoCoding(request))
-//            .observeOn(MainScheduler.instance)
-//            .subscribe { [weak self] (result) in
-//                switch result {
-//                case .success(let response):
-//                    print(response)
-//                case .error(let error):
-//                    print(error)
-//                }
-//            }.disposed(by: bag)
+        let usecase = MoyaProvider<ReverseGeoCodingTarget>.makeProvider()
+        let request = ReverseGeoCodingRequest(latitude: 37.325130462646484, longitude: 127.1183853149414)
+        usecase.rx.request(.reverseGeoCoding(request))
+            .observeOn(MainScheduler.instance)
+            .subscribe { [weak self] (result) in
+                switch result {
+                case .success(let response):
+                    print(response)
+                case .error(let error):
+                    print(error)
+                }
+            }.disposed(by: bag)
     }
 
     private func setupInputBinding() {
