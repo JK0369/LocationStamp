@@ -74,7 +74,7 @@ class PhotoVM: ErrorHandleable {
                     self?.location.accept(locationInfo)
 
                 case .error(let error):
-                    print(error)
+                    self?.handleError(error)
                 }
             }.disposed(by: bag)
     }

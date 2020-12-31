@@ -36,6 +36,7 @@ final class InfoVC: BaseViewController, StoryboardInitializable, ErrorPresentabl
         super.viewDidLoad()
         setupInputBinding()
         setupErrorHandlerBinding()
+        setupOutputBinding()
     }
 
     private func setupInputBinding() {
@@ -56,6 +57,15 @@ final class InfoVC: BaseViewController, StoryboardInitializable, ErrorPresentabl
         btnConfirm.rx.tap.asDriverOnErrorNever()
             .drive(onNext: { [weak self] in
                 self?.viewModel.didTapBtnConfrim()
+            }).disposed(by: bag)
+    }
+
+    // MARK: - OutputBinding
+
+    private func setupOutputBinding() {
+        viewModel.requireLocationAuth.asDriverOnErrorNever()
+            .drive(onNext: { [weak self] in
+                self?.showAlertAndSetting(alertTitle: "현재 위치를 확인하기 위해 위치 서비스를 켜주세요", actionTitle: "위치 서비스 켜기")
             }).disposed(by: bag)
     }
 }

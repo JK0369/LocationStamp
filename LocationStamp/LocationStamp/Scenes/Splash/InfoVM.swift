@@ -23,13 +23,15 @@ class InfoVM: NSObject, ErrorHandleable {
 
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
+        super.init()
         locationManager = CLLocationManager()
-//        locationManager.delegate = self
+        locationManager.delegate = self
     }
 
     // MARK: - Output
 
     var showError = PublishRelay<ErrorData>()
+    let requireLocationAuth = PublishRelay<Void>()
 
     // MARK: - Properties
 
@@ -47,5 +49,31 @@ class InfoVM: NSObject, ErrorHandleable {
 }
 
 extension InfoVM: CLLocationManagerDelegate {
-    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .denied, .notDetermined, .restricted:
+            requireLocationAuth.accept(())
+        default:
+            dependencies.router.trigger(.option)
+            break
+        }
+    }
+
+    @available(iOS 14, *)
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+
+        switch manager.accuracyAuthorization {
+        case .reducedAccuracy:
+            requireLocationAuth.accept(())
+        default:
+            break
+        }
+
+    }
 }
