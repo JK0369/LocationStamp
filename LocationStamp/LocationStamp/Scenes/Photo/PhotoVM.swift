@@ -11,11 +11,13 @@ import Domain
 import RxSwift
 import RxCocoa
 import XCoordinator
+import Moya
 
 class PhotoVM: ErrorHandleable {
 
     struct Dependencies {
         let router: UnownedRouter<PhotoRoute>
+        let ReverseGeoCodingUsecase: MoyaProvider<ReverseGeoCodingTarget>
     }
 
     init(dependencies: Dependencies) {
@@ -34,9 +36,20 @@ class PhotoVM: ErrorHandleable {
     // MARK: - Handling View Input
 
     func viewWillAppear() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+    }
 
-        }
+    func didTapBtnReverseGeoCoding() {
+        let request = ReverseGeoCodingRequest(latitude: 37.325130462646484, longitude: 127.1183853149414)
+        dependencies.ReverseGeoCodingUsecase.rx.request(.reverseGeoCoding(request))
+            .observeOn(MainScheduler.instance)
+            .subscribe { [weak self] (result) in
+                switch result {
+                case .success(let response):
+                    print(response)
+                case .error(let error):
+                    print(error)
+                }
+            }.disposed(by: bag)
     }
 
 }

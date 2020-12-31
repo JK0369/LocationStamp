@@ -18,6 +18,7 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
 
     // MARK: - Propertye
 
+    @IBOutlet weak var btnReverseGeoCoding: UIButton!
     var viewModel: PhotoVM!
 
     required init?(coder: NSCoder, viewModel: PhotoVM) {
@@ -47,6 +48,13 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
             .mapToVoid()
             .drive(onNext: { [weak self] in
                 self?.viewModel.viewWillAppear()
+            }).disposed(by: bag)
+    }
+
+    private func btnReverseGeoCodingTapEvent() {
+        btnReverseGeoCoding.rx.tap.asDriverOnErrorNever()
+            .drive(onNext: { [weak self] in
+                self?.viewModel.didTapBtnReverseGeoCoding()
             }).disposed(by: bag)
     }
 }

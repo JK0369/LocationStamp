@@ -45,6 +45,9 @@
                             <constraint firstItem="mP1-VT-GQC" firstAttribute="top" secondItem="l8Z-MQ-IL9" secondAttribute="bottom" constant="8" id="xo2-XC-odA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnReverseGeoCoding" destination="l8Z-MQ-IL9" id="qFq-O4-RTX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bC-wR-JcM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
