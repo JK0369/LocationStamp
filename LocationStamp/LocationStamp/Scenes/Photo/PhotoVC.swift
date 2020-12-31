@@ -41,6 +41,8 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
 
     private func setupInputBinding() {
         viewWillAppearEvent()
+
+        btnReverseGeoCodingTapEvent()
     }
 
     private func viewWillAppearEvent() {
