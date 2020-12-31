@@ -13,6 +13,8 @@ struct Constants {
         static let splash = "Splash"
         static let dialog = "Dialog"
         static let option = "Option"
+
+        static let photo = "Photo"
     }
 
 }

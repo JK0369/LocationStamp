@@ -43,6 +43,10 @@
 		E09EFE74259DA663004FAE28 /* OptionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EFE73259DA663004FAE28 /* OptionBuilder.swift */; };
 		E09EFE76259DA6FA004FAE28 /* OptionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EFE75259DA6FA004FAE28 /* OptionCoordinator.swift */; };
 		E09EFE78259DA80D004FAE28 /* Option.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E09EFE77259DA80D004FAE28 /* Option.storyboard */; };
+		E09EFE7B259DA9D7004FAE28 /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EFE7A259DA9D7004FAE28 /* PhotoVC.swift */; };
+		E09EFE7D259DA9DC004FAE28 /* PhotoVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EFE7C259DA9DC004FAE28 /* PhotoVM.swift */; };
+		E09EFE7F259DA9E4004FAE28 /* PhotoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EFE7E259DA9E4004FAE28 /* PhotoBuilder.swift */; };
+		E09EFE81259DAA60004FAE28 /* PhotoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EFE80259DAA60004FAE28 /* PhotoCoordinator.swift */; };
 		E0B37E8D259AFF15004B257D /* Pods_LocationStamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFAF1BF5583D08BAFFEBC930 /* Pods_LocationStamp.framework */; };
 		E0B37E8E259AFF15004B257D /* Pods_LocationStamp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFAF1BF5583D08BAFFEBC930 /* Pods_LocationStamp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0BC5065259A2E2300122E7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BC5064259A2E2300122E7D /* AppDelegate.swift */; };
@@ -116,6 +120,10 @@
 		E09EFE73259DA663004FAE28 /* OptionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionBuilder.swift; sourceTree = "<group>"; };
 		E09EFE75259DA6FA004FAE28 /* OptionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCoordinator.swift; sourceTree = "<group>"; };
 		E09EFE77259DA80D004FAE28 /* Option.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Option.storyboard; sourceTree = "<group>"; };
+		E09EFE7A259DA9D7004FAE28 /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
+		E09EFE7C259DA9DC004FAE28 /* PhotoVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVM.swift; sourceTree = "<group>"; };
+		E09EFE7E259DA9E4004FAE28 /* PhotoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoBuilder.swift; sourceTree = "<group>"; };
+		E09EFE80259DAA60004FAE28 /* PhotoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCoordinator.swift; sourceTree = "<group>"; };
 		E0BC5061259A2E2300122E7D /* LocationStamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationStamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BC5064259A2E2300122E7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0BC5068259A2E2300122E7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +194,7 @@
 				E04ED152259A2F7700203ACD /* SplashCoordinator.swift */,
 				E04ED153259A2F7700203ACD /* BaseNavigationCoordinator.swift */,
 				E09EFE75259DA6FA004FAE28 /* OptionCoordinator.swift */,
+				E09EFE80259DAA60004FAE28 /* PhotoCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -193,6 +202,7 @@
 		E04ED154259A2F7700203ACD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E09EFE79259DA9AE004FAE28 /* Photo */,
 				E09EFE6E259DA63A004FAE28 /* Option */,
 				E04ED155259A2F7700203ACD /* Splash */,
 			);
@@ -265,6 +275,16 @@
 				E09EFE73259DA663004FAE28 /* OptionBuilder.swift */,
 			);
 			path = Option;
+			sourceTree = "<group>";
+		};
+		E09EFE79259DA9AE004FAE28 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				E09EFE7A259DA9D7004FAE28 /* PhotoVC.swift */,
+				E09EFE7C259DA9DC004FAE28 /* PhotoVM.swift */,
+				E09EFE7E259DA9E4004FAE28 /* PhotoBuilder.swift */,
+			);
+			path = Photo;
 			sourceTree = "<group>";
 		};
 		E0BC5058259A2E2300122E7D = {
@@ -461,14 +481,17 @@
 				E04ED185259A2F7700203ACD /* UITextField.swift in Sources */,
 				E0CB1890259CE904001BD958 /* InfoVC.swift in Sources */,
 				E04ED179259A2F7700203ACD /* ServiceConfiguration.swift in Sources */,
+				E09EFE81259DAA60004FAE28 /* PhotoCoordinator.swift in Sources */,
 				E04ED187259A2F7700203ACD /* UIButton.swift in Sources */,
 				E04ED182259A2F7700203ACD /* Reactive.swift in Sources */,
 				E04ED186259A2F7700203ACD /* String.swift in Sources */,
+				E09EFE7F259DA9E4004FAE28 /* PhotoBuilder.swift in Sources */,
 				E04ED184259A2F7700203ACD /* UItableView.swift in Sources */,
 				E09EFE70259DA654004FAE28 /* OptionVC.swift in Sources */,
 				E04ED171259A2F7700203ACD /* Constants.swift in Sources */,
 				E04ED181259A2F7700203ACD /* Int64.swift in Sources */,
 				E04ED173259A2F7700203ACD /* SplashCoordinator.swift in Sources */,
+				E09EFE7D259DA9DC004FAE28 /* PhotoVM.swift in Sources */,
 				E04ED17D259A2F7700203ACD /* Array.swift in Sources */,
 				E04ED176259A2F7700203ACD /* SplashVC.swift in Sources */,
 				E04ED175259A2F7700203ACD /* SplashBuilder.swift in Sources */,
@@ -477,6 +500,7 @@
 				E04ED174259A2F7700203ACD /* BaseNavigationCoordinator.swift in Sources */,
 				E04ED180259A2F7700203ACD /* CLLocationCoordinate2D.swift in Sources */,
 				E09EFE72259DA659004FAE28 /* OptionVM.swift in Sources */,
+				E09EFE7B259DA9D7004FAE28 /* PhotoVC.swift in Sources */,
 				E09EFE76259DA6FA004FAE28 /* OptionCoordinator.swift in Sources */,
 				E04ED17E259A2F7700203ACD /* Animation.swift in Sources */,
 				E04ED17A259A2F7700203ACD /* CALayer.swift in Sources */,

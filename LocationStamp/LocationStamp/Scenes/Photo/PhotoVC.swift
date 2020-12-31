@@ -1,8 +1,8 @@
 //
-//  SplashVC.swift
-//  BaseProject
+//  PhotoVC.swift
+//  LocationStamp
 //
-//  Created by 김종권 on 2020/12/27.
+//  Created by 김종권 on 2020/12/31.
 //
 
 import Foundation
@@ -12,15 +12,15 @@ import RxSwift
 import RxCocoa
 import Moya
 
-final class SplashVC: BaseViewController, StoryboardInitializable, ErrorPresentable {
-    static var storyboardName: String = Constants.Storyboard.splash
-    static var storyboardID: String = SplashVC.className
+final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentable {
+    static var storyboardName: String = Constants.Storyboard.photo
+    static var storyboardID: String = PhotoVC.className
 
-    // MARK: - Property
+    // MARK: - Propertye
 
-    var viewModel: SplashVM!
+    var viewModel: PhotoVM!
 
-    required init?(coder: NSCoder, viewModel: SplashVM) {
+    required init?(coder: NSCoder, viewModel: PhotoVM) {
         self.viewModel = viewModel
         super.init(coder: coder)
     }
