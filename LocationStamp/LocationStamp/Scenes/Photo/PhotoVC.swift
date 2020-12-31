@@ -19,6 +19,7 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
     // MARK: - Propertye
 
     @IBOutlet weak var btnReverseGeoCoding: UIButton!
+    @IBOutlet weak var lblLocation: UILabel!
     var viewModel: PhotoVM!
 
     required init?(coder: NSCoder, viewModel: PhotoVM) {
@@ -37,6 +38,7 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
         networkListener = .on
         setupErrorHandlerBinding()
         setupInputBinding()
+        setupOutputBinding()
     }
 
     private func setupInputBinding() {
@@ -57,6 +59,15 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
         btnReverseGeoCoding.rx.tap.asDriverOnErrorNever()
             .drive(onNext: { [weak self] in
                 self?.viewModel.didTapBtnReverseGeoCoding()
+            }).disposed(by: bag)
+    }
+
+    // MARK: - OutputBinding
+
+    private func setupOutputBinding() {
+        viewModel.location.asDriverOnErrorNever()
+            .drive(onNext: { [weak self] (locationInfo) in
+                self?.lblLocation.text = locationInfo.location()
             }).disposed(by: bag)
     }
 }

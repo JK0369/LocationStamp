@@ -47,6 +47,7 @@
                     </view>
                     <connections>
                         <outlet property="btnReverseGeoCoding" destination="l8Z-MQ-IL9" id="qFq-O4-RTX"/>
+                        <outlet property="lblLocation" destination="mP1-VT-GQC" id="gX4-MT-Qvf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bC-wR-JcM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
