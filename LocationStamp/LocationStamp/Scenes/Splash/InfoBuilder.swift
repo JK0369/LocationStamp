@@ -12,13 +12,7 @@ import XCoordinator
 class InfoBuilder {
     static func build(router: UnownedRouter<SplashRoute>, postTaskManager: PostTaskManager) -> InfoVC {
         let dependencies = InfoVM.Dependencies(
-//            router: router,
-//            postTaskManager: postTaskManager,
-//            keychain: KeychainService.shared,
-//            appStatusUseCase: MoyaProvider<AppConfigTarget>.makeProvider(),
-//            mapStyleUseCase: MoyaProvider<MapStyleTarget>.makeProvider(),
-//            accountUseCase: MoyaProvider<AccountTarget>.makeProvider(),
-//            tapSetting: TapServiceSetting.shared
+            router: router
         )
         let vm = InfoVM(dependencies: dependencies)
         return InfoVC.instantiate(viewModel: vm)

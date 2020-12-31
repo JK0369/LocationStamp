@@ -41,6 +41,8 @@
 		E09EFE70259DA654004FAE28 /* OptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EFE6F259DA654004FAE28 /* OptionVC.swift */; };
 		E09EFE72259DA659004FAE28 /* OptionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EFE71259DA659004FAE28 /* OptionVM.swift */; };
 		E09EFE74259DA663004FAE28 /* OptionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EFE73259DA663004FAE28 /* OptionBuilder.swift */; };
+		E09EFE76259DA6FA004FAE28 /* OptionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EFE75259DA6FA004FAE28 /* OptionCoordinator.swift */; };
+		E09EFE78259DA80D004FAE28 /* Option.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E09EFE77259DA80D004FAE28 /* Option.storyboard */; };
 		E0B37E8D259AFF15004B257D /* Pods_LocationStamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFAF1BF5583D08BAFFEBC930 /* Pods_LocationStamp.framework */; };
 		E0B37E8E259AFF15004B257D /* Pods_LocationStamp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFAF1BF5583D08BAFFEBC930 /* Pods_LocationStamp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0BC5065259A2E2300122E7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BC5064259A2E2300122E7D /* AppDelegate.swift */; };
@@ -112,6 +114,8 @@
 		E09EFE6F259DA654004FAE28 /* OptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionVC.swift; sourceTree = "<group>"; };
 		E09EFE71259DA659004FAE28 /* OptionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionVM.swift; sourceTree = "<group>"; };
 		E09EFE73259DA663004FAE28 /* OptionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionBuilder.swift; sourceTree = "<group>"; };
+		E09EFE75259DA6FA004FAE28 /* OptionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCoordinator.swift; sourceTree = "<group>"; };
+		E09EFE77259DA80D004FAE28 /* Option.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Option.storyboard; sourceTree = "<group>"; };
 		E0BC5061259A2E2300122E7D /* LocationStamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationStamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BC5064259A2E2300122E7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0BC5068259A2E2300122E7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				E04ED150259A2F7700203ACD /* Splash.storyboard */,
+				E09EFE77259DA80D004FAE28 /* Option.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 			children = (
 				E04ED152259A2F7700203ACD /* SplashCoordinator.swift */,
 				E04ED153259A2F7700203ACD /* BaseNavigationCoordinator.swift */,
+				E09EFE75259DA6FA004FAE28 /* OptionCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0BC5071259A2E2300122E7D /* LaunchScreen.storyboard in Resources */,
+				E09EFE78259DA80D004FAE28 /* Option.storyboard in Resources */,
 				E0BC506E259A2E2300122E7D /* Assets.xcassets in Resources */,
 				E03CE5FB259CDFC400CA17D9 /* GoogleService-Info-alpha.plist in Resources */,
 				E04ED195259A33E500203ACD /* GoogleService-Info.plist in Resources */,
@@ -470,6 +477,7 @@
 				E04ED174259A2F7700203ACD /* BaseNavigationCoordinator.swift in Sources */,
 				E04ED180259A2F7700203ACD /* CLLocationCoordinate2D.swift in Sources */,
 				E09EFE72259DA659004FAE28 /* OptionVM.swift in Sources */,
+				E09EFE76259DA6FA004FAE28 /* OptionCoordinator.swift in Sources */,
 				E04ED17E259A2F7700203ACD /* Animation.swift in Sources */,
 				E04ED17A259A2F7700203ACD /* CALayer.swift in Sources */,
 				E04ED188259A2F7700203ACD /* UIViewController.swift in Sources */,

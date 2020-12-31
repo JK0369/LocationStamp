@@ -15,6 +15,7 @@ import XCoordinator
 class OptionVM: ErrorHandleable {
 
     struct Dependencies {
+        let router: UnownedRouter<OptionRoute>
     }
 
     init(dependencies: Dependencies) {

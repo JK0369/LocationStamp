@@ -16,8 +16,20 @@
                     <view key="view" contentMode="scaleToFill" id="at4-nX-LWp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Splash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ros-vJ-yuH">
+                                <rect key="frame" x="181.5" y="60" width="51.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="mT1-HG-NTs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ros-vJ-yuH" firstAttribute="centerX" secondItem="at4-nX-LWp" secondAttribute="centerX" id="WYd-TR-xxN"/>
+                            <constraint firstItem="ros-vJ-yuH" firstAttribute="top" secondItem="mT1-HG-NTs" secondAttribute="top" constant="16" id="tNa-cV-tVg"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nb3-Xs-6Sf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

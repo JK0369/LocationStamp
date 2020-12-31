@@ -10,10 +10,12 @@ import CommonExtension
 import Domain
 import RxSwift
 import RxCocoa
+import XCoordinator
 
 class InfoVM: ErrorHandleable {
 
     struct Dependencies {
+        let router: UnownedRouter<SplashRoute>
     }
 
     init(dependencies: Dependencies) {
@@ -32,6 +34,8 @@ class InfoVM: ErrorHandleable {
     // MARK: - Handling View Input
 
     func viewWillAppear() {
-
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+            self?.dependencies.router.trigger(.option)
+        }
     }
 }
