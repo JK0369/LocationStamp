@@ -41,6 +41,8 @@ final class OptionVC: BaseViewController, StoryboardInitializable, ErrorPresenta
 
     private func setupInputBinding() {
         viewWillAppearEvent()
+
+        btnPhotoTapEvent()
     }
 
     private func viewWillAppearEvent() {
