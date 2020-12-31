@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PhotoVC-->
+        <scene sceneID="RdS-RQ-YTN">
+            <objects>
+                <viewController storyboardIdentifier="PhotoVC" id="h09-QF-GZc" customClass="PhotoVC" customModule="LocationStamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fiq-4R-5GM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZa-I8-lmd">
+                                <rect key="frame" x="184.5" y="60" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8Z-MQ-IL9">
+                                <rect key="frame" x="140.5" y="433" width="133" height="30"/>
+                                <state key="normal" title="reverse-geoCoding"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mP1-VT-GQC">
+                                <rect key="frame" x="186.5" y="471" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tst-99-MgS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="l8Z-MQ-IL9" firstAttribute="centerY" secondItem="fiq-4R-5GM" secondAttribute="centerY" id="JKE-Nd-bUa"/>
+                            <constraint firstItem="l8Z-MQ-IL9" firstAttribute="centerX" secondItem="fiq-4R-5GM" secondAttribute="centerX" id="MsQ-I0-5p0"/>
+                            <constraint firstItem="mP1-VT-GQC" firstAttribute="centerX" secondItem="fiq-4R-5GM" secondAttribute="centerX" id="V0x-Lr-qMg"/>
+                            <constraint firstItem="nZa-I8-lmd" firstAttribute="centerX" secondItem="fiq-4R-5GM" secondAttribute="centerX" id="pCQ-Lw-Mc5"/>
+                            <constraint firstItem="nZa-I8-lmd" firstAttribute="top" secondItem="tst-99-MgS" secondAttribute="top" constant="16" id="wb8-7Y-ztD"/>
+                            <constraint firstItem="mP1-VT-GQC" firstAttribute="top" secondItem="l8Z-MQ-IL9" secondAttribute="bottom" constant="8" id="xo2-XC-odA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8bC-wR-JcM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="129"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
