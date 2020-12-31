@@ -18,6 +18,7 @@ final class OptionVC: BaseViewController, StoryboardInitializable, ErrorPresenta
 
     // MARK: - Property
 
+    @IBOutlet weak var btnPhoto: UIButton!
     var viewModel: OptionVM!
 
     required init?(coder: NSCoder, viewModel: OptionVM) {
@@ -47,6 +48,13 @@ final class OptionVC: BaseViewController, StoryboardInitializable, ErrorPresenta
             .mapToVoid()
             .drive(onNext: { [weak self] in
                 self?.viewModel.viewWillAppear()
+            }).disposed(by: bag)
+    }
+
+    private func btnPhotoTapEvent() {
+        btnPhoto.rx.tap.asDriverOnErrorNever()
+            .drive(onNext: { [weak self] in
+                self?.viewModel.didTapBtnPhoto()
             }).disposed(by: bag)
     }
 }

@@ -36,4 +36,8 @@ class OptionVM: ErrorHandleable {
     func viewWillAppear() {
     }
 
+    func didTapBtnPhoto() {
+        dependencies.router.trigger(.photo)
+    }
+
 }
