@@ -18,6 +18,7 @@ final class InfoVC: BaseViewController, StoryboardInitializable, ErrorPresentabl
 
     // MARK: - Property
 
+    @IBOutlet weak var btnConfirm: UIButton!
     var viewModel: InfoVM!
 
     required init?(coder: NSCoder, viewModel: InfoVM) {
@@ -39,6 +40,8 @@ final class InfoVC: BaseViewController, StoryboardInitializable, ErrorPresentabl
 
     private func setupInputBinding() {
         viewWillAppearEvent()
+
+        btnConfirmTapEvent()
     }
 
     private func viewWillAppearEvent() {
@@ -46,6 +49,13 @@ final class InfoVC: BaseViewController, StoryboardInitializable, ErrorPresentabl
             .mapToVoid()
             .drive(onNext: { [weak self] in
                 self?.viewModel.viewWillAppear()
+            }).disposed(by: bag)
+    }
+
+    private func btnConfirmTapEvent() {
+        btnConfirm.rx.tap.asDriverOnErrorNever()
+            .drive(onNext: { [weak self] in
+                self?.viewModel.didTapBtnConfrim()
             }).disposed(by: bag)
     }
 }

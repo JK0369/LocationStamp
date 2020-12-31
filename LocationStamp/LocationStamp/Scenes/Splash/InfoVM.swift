@@ -11,8 +11,11 @@ import Domain
 import RxSwift
 import RxCocoa
 import XCoordinator
+import CoreLocation
 
-class InfoVM: ErrorHandleable {
+class InfoVM: NSObject, ErrorHandleable {
+
+    var locationManager: CLLocationManager!
 
     struct Dependencies {
         let router: UnownedRouter<SplashRoute>
@@ -20,6 +23,8 @@ class InfoVM: ErrorHandleable {
 
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
+        locationManager = CLLocationManager()
+//        locationManager.delegate = self
     }
 
     // MARK: - Output
@@ -34,8 +39,13 @@ class InfoVM: ErrorHandleable {
     // MARK: - Handling View Input
 
     func viewWillAppear() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-            self?.dependencies.router.trigger(.option)
-        }
     }
+
+    func didTapBtnConfrim() {
+        dependencies.router.trigger(.option)
+    }
+}
+
+extension InfoVM: CLLocationManagerDelegate {
+    
 }
