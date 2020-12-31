@@ -38,6 +38,9 @@
 		E04ED18C259A2F7700203ACD /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED170259A2F7700203ACD /* Double.swift */; };
 		E04ED195259A33E500203ACD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E04ED192259A33E500203ACD /* GoogleService-Info.plist */; };
 		E04ED197259A33E500203ACD /* GoogleService-Info-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = E04ED194259A33E500203ACD /* GoogleService-Info-debug.plist */; };
+		E09EFE70259DA654004FAE28 /* OptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EFE6F259DA654004FAE28 /* OptionVC.swift */; };
+		E09EFE72259DA659004FAE28 /* OptionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EFE71259DA659004FAE28 /* OptionVM.swift */; };
+		E09EFE74259DA663004FAE28 /* OptionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EFE73259DA663004FAE28 /* OptionBuilder.swift */; };
 		E0B37E8D259AFF15004B257D /* Pods_LocationStamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFAF1BF5583D08BAFFEBC930 /* Pods_LocationStamp.framework */; };
 		E0B37E8E259AFF15004B257D /* Pods_LocationStamp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EFAF1BF5583D08BAFFEBC930 /* Pods_LocationStamp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0BC5065259A2E2300122E7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BC5064259A2E2300122E7D /* AppDelegate.swift */; };
@@ -106,6 +109,9 @@
 		E04ED170259A2F7700203ACD /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		E04ED192259A33E500203ACD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E04ED194259A33E500203ACD /* GoogleService-Info-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-debug.plist"; sourceTree = "<group>"; };
+		E09EFE6F259DA654004FAE28 /* OptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionVC.swift; sourceTree = "<group>"; };
+		E09EFE71259DA659004FAE28 /* OptionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionVM.swift; sourceTree = "<group>"; };
+		E09EFE73259DA663004FAE28 /* OptionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionBuilder.swift; sourceTree = "<group>"; };
 		E0BC5061259A2E2300122E7D /* LocationStamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationStamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BC5064259A2E2300122E7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0BC5068259A2E2300122E7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +187,7 @@
 		E04ED154259A2F7700203ACD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E09EFE6E259DA63A004FAE28 /* Option */,
 				E04ED155259A2F7700203ACD /* Splash */,
 			);
 			path = Scenes;
@@ -242,6 +249,16 @@
 				E04ED170259A2F7700203ACD /* Double.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E09EFE6E259DA63A004FAE28 /* Option */ = {
+			isa = PBXGroup;
+			children = (
+				E09EFE6F259DA654004FAE28 /* OptionVC.swift */,
+				E09EFE71259DA659004FAE28 /* OptionVM.swift */,
+				E09EFE73259DA663004FAE28 /* OptionBuilder.swift */,
+			);
+			path = Option;
 			sourceTree = "<group>";
 		};
 		E0BC5058259A2E2300122E7D = {
@@ -433,6 +450,7 @@
 				E04ED189259A2F7700203ACD /* Transition.swift in Sources */,
 				E0BC5069259A2E2300122E7D /* ViewController.swift in Sources */,
 				E0BC5065259A2E2300122E7D /* AppDelegate.swift in Sources */,
+				E09EFE74259DA663004FAE28 /* OptionBuilder.swift in Sources */,
 				E04ED185259A2F7700203ACD /* UITextField.swift in Sources */,
 				E0CB1890259CE904001BD958 /* InfoVC.swift in Sources */,
 				E04ED179259A2F7700203ACD /* ServiceConfiguration.swift in Sources */,
@@ -440,6 +458,7 @@
 				E04ED182259A2F7700203ACD /* Reactive.swift in Sources */,
 				E04ED186259A2F7700203ACD /* String.swift in Sources */,
 				E04ED184259A2F7700203ACD /* UItableView.swift in Sources */,
+				E09EFE70259DA654004FAE28 /* OptionVC.swift in Sources */,
 				E04ED171259A2F7700203ACD /* Constants.swift in Sources */,
 				E04ED181259A2F7700203ACD /* Int64.swift in Sources */,
 				E04ED173259A2F7700203ACD /* SplashCoordinator.swift in Sources */,
@@ -450,6 +469,7 @@
 				E04ED17F259A2F7700203ACD /* Error.swift in Sources */,
 				E04ED174259A2F7700203ACD /* BaseNavigationCoordinator.swift in Sources */,
 				E04ED180259A2F7700203ACD /* CLLocationCoordinate2D.swift in Sources */,
+				E09EFE72259DA659004FAE28 /* OptionVM.swift in Sources */,
 				E04ED17E259A2F7700203ACD /* Animation.swift in Sources */,
 				E04ED17A259A2F7700203ACD /* CALayer.swift in Sources */,
 				E04ED188259A2F7700203ACD /* UIViewController.swift in Sources */,

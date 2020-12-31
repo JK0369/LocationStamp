@@ -29,7 +29,7 @@ final class SplashVC: BaseViewController, StoryboardInitializable, ErrorPresenta
         super.init(coder: coder)
     }
 
-    // MARK: - View Lifr Cyclehvc
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
