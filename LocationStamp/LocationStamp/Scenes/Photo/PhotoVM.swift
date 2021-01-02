@@ -17,7 +17,7 @@ import CoreLocation
 class PhotoVM: NSObject, ErrorHandleable {
 
     var locationManager: CLLocationManager!
-    var imagePickerController: UIImagePickerController!
+    var imagePickerController = UIImagePickerController()
 
     struct Dependencies {
         let router: UnownedRouter<PhotoRoute>
@@ -26,9 +26,10 @@ class PhotoVM: NSObject, ErrorHandleable {
 
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
-        imagePickerController = UIImagePickerController()
         super.init()
-        imagePickerController.delegate = self
+        DispatchQueue.main.async {
+            self.imagePickerController.delegate = self
+        }
     }
 
     // MARK: - Output

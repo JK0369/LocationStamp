@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UIImage {
-        
+
     func scaledImage(scaledToSize newSize: CGSize) -> UIImage {
         let image = self
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
@@ -18,5 +18,4 @@ public extension UIImage {
         UIGraphicsEndImageContext()
         return newImage
     }
-    
 }
