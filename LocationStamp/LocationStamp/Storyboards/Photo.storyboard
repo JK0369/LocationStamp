@@ -59,17 +59,50 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bq-GV-QTM">
+                                <rect key="frame" x="0.0" y="92" width="414" height="708"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Enm-3R-yHs">
+                                        <rect key="frame" x="80" y="269" width="254" height="170"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진을 선택해 주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="I2o-Jc-hO6">
+                                                <rect key="frame" x="70" y="74.5" width="114" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="170" id="1Zc-2k-MS0"/>
+                                            <constraint firstAttribute="trailing" secondItem="I2o-Jc-hO6" secondAttribute="trailing" constant="70" id="E72-MH-rjS"/>
+                                            <constraint firstItem="I2o-Jc-hO6" firstAttribute="centerY" secondItem="Enm-3R-yHs" secondAttribute="centerY" id="dKK-tj-c32"/>
+                                            <constraint firstItem="I2o-Jc-hO6" firstAttribute="leading" secondItem="Enm-3R-yHs" secondAttribute="leading" constant="70" id="oN2-Xh-hBj"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Enm-3R-yHs" firstAttribute="leading" secondItem="1bq-GV-QTM" secondAttribute="leading" constant="80" id="RAA-MO-3bn"/>
+                                    <constraint firstItem="Enm-3R-yHs" firstAttribute="centerY" secondItem="1bq-GV-QTM" secondAttribute="centerY" id="bBa-va-CWl"/>
+                                    <constraint firstAttribute="trailing" secondItem="Enm-3R-yHs" secondAttribute="trailing" constant="80" id="cN1-Fq-jGh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tst-99-MgS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Qfn-DD-ms3" firstAttribute="top" secondItem="ctD-I5-eiE" secondAttribute="bottom" id="68z-uZ-hH9"/>
                             <constraint firstItem="5wc-SI-7i2" firstAttribute="centerX" secondItem="fiq-4R-5GM" secondAttribute="centerX" id="9Fg-O4-X42"/>
+                            <constraint firstItem="1bq-GV-QTM" firstAttribute="top" secondItem="ctD-I5-eiE" secondAttribute="bottom" id="9IT-0l-Z6d"/>
+                            <constraint firstItem="1bq-GV-QTM" firstAttribute="trailing" secondItem="tst-99-MgS" secondAttribute="trailing" id="D6u-xP-kX8"/>
+                            <constraint firstItem="FQ1-T4-khE" firstAttribute="top" secondItem="1bq-GV-QTM" secondAttribute="bottom" constant="16" id="HXQ-Qd-A9e"/>
                             <constraint firstItem="5wc-SI-7i2" firstAttribute="centerY" secondItem="fiq-4R-5GM" secondAttribute="centerY" id="HvB-1S-XJz"/>
                             <constraint firstItem="FQ1-T4-khE" firstAttribute="top" secondItem="Qfn-DD-ms3" secondAttribute="bottom" constant="16" id="MCL-hv-Grf"/>
                             <constraint firstItem="ctD-I5-eiE" firstAttribute="top" secondItem="tst-99-MgS" secondAttribute="top" id="ST2-hy-0dC"/>
                             <constraint firstItem="Qfn-DD-ms3" firstAttribute="leading" secondItem="tst-99-MgS" secondAttribute="leading" id="WZb-Jp-idM"/>
                             <constraint firstItem="FQ1-T4-khE" firstAttribute="leading" secondItem="tst-99-MgS" secondAttribute="leading" constant="16" id="Y8A-lT-N2N"/>
+                            <constraint firstItem="1bq-GV-QTM" firstAttribute="leading" secondItem="tst-99-MgS" secondAttribute="leading" id="ZTS-dp-PhD"/>
                             <constraint firstItem="tst-99-MgS" firstAttribute="trailing" secondItem="FQ1-T4-khE" secondAttribute="trailing" constant="16" id="gbF-Qk-h2o"/>
                             <constraint firstItem="tst-99-MgS" firstAttribute="bottom" secondItem="FQ1-T4-khE" secondAttribute="bottom" constant="16" id="j8b-Em-gjo"/>
                             <constraint firstItem="tst-99-MgS" firstAttribute="trailing" secondItem="Qfn-DD-ms3" secondAttribute="trailing" id="uYO-Gt-pNv"/>
@@ -83,6 +116,7 @@
                         <outlet property="btnSelect" destination="r8O-Zx-DEh" id="JtE-Lf-VtE"/>
                         <outlet property="imageView" destination="Qfn-DD-ms3" id="J28-J9-jmf"/>
                         <outlet property="lblLocation" destination="5wc-SI-7i2" id="IRb-Px-Udm"/>
+                        <outlet property="viewEmpty" destination="1bq-GV-QTM" id="gO3-Fo-Ese"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bC-wR-JcM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

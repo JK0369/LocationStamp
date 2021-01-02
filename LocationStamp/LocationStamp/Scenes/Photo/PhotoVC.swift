@@ -23,6 +23,8 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var viewEmpty: UIView!
+
     var viewModel: PhotoVM!
 
     required init?(coder: NSCoder, viewModel: PhotoVM) {
@@ -101,6 +103,7 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
         viewModel.updateImage.asDriverOnErrorNever()
             .drive(onNext: { [weak self] (image) in
                 self?.imageView.image = image
+                self?.viewEmpty.isHidden = true
             }).disposed(by: bag)
     }
 }
