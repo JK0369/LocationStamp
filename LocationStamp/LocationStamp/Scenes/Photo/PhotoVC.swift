@@ -18,7 +18,6 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
 
     // MARK: - Propertye
 
-    @IBOutlet weak var btnReverseGeoCoding: UIButton!
     @IBOutlet weak var btnSelect: UIButton!
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -46,8 +45,6 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
     private func setupInputBinding() {
         viewWillAppearEvent()
 
-        btnReverseGeoCodingTapEvent()
-
         btnSelectTapEvent()
     }
 
@@ -56,13 +53,6 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
             .mapToVoid()
             .drive(onNext: { [weak self] in
                 self?.viewModel.viewWillAppear()
-            }).disposed(by: bag)
-    }
-
-    private func btnReverseGeoCodingTapEvent() {
-        btnReverseGeoCoding.rx.tap.asDriverOnErrorNever()
-            .drive(onNext: { [weak self] in
-                self?.viewModel.didTapBtnReverseGeoCoding()
             }).disposed(by: bag)
     }
 
@@ -78,7 +68,7 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
     private func setupOutputBinding() {
         viewModel.location.asDriverOnErrorNever()
             .drive(onNext: { [weak self] (locationInfo) in
-                self?.lblLocation.text = locationInfo.location()
+                self?.lblLocation.text = locationInfo.location(locationScope: .gps)
             }).disposed(by: bag)
 
         viewModel.updateImage.asDriverOnErrorNever()

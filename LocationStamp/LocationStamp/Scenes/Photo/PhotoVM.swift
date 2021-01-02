@@ -48,7 +48,7 @@ class PhotoVM: NSObject, ErrorHandleable {
         imagePickerController.sourceType = .photoLibrary
     }
 
-    func didTapBtnReverseGeoCoding() {
+    private func reverseGeoCoding() {
 
         let coor = coordinate()
         if coor.lat == 0 {
@@ -103,6 +103,7 @@ extension PhotoVM: UIImagePickerControllerDelegate, UINavigationControllerDelega
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             updateImage.accept(image)
+            reverseGeoCoding()
         }
         dependencies.router.trigger(.back)
     }

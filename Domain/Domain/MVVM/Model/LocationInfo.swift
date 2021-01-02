@@ -7,6 +7,11 @@
 
 import Foundation
 
+public enum LocationScope {
+    case gps
+    case city
+}
+
 public struct LocationInfo {
     public let pricipalSubdivision: String
     public let city: String
@@ -22,7 +27,17 @@ public struct LocationInfo {
         self.lng = lng
     }
 
-    public func location() -> String {
-        pricipalSubdivision + " " + city + " " + locality
+    public func location(locationScope: LocationScope) -> String {
+        switch locationScope {
+        case .gps:
+            return """
+                경기도 용인시 수지구
+                latitude(\(lat))
+                longititude(\(lng))
+                """
+        case .city:
+            return pricipalSubdivision + " " + city + " " + locality
+        }
+
     }
 }
