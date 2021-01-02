@@ -53,7 +53,7 @@
                                 <rect key="frame" x="16" y="816" width="382" height="30"/>
                                 <state key="normal" title="save"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wc-SI-7i2">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wc-SI-7i2">
                                 <rect key="frame" x="190.5" y="434.5" width="33.5" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -78,6 +78,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnBack" destination="hJX-lZ-PLv" id="Vak-cL-A0a"/>
                         <outlet property="btnSave" destination="FQ1-T4-khE" id="EYn-ZP-SaW"/>
                         <outlet property="btnSelect" destination="r8O-Zx-DEh" id="JtE-Lf-VtE"/>
                         <outlet property="imageView" destination="Qfn-DD-ms3" id="J28-J9-jmf"/>

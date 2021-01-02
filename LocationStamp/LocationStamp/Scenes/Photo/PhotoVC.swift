@@ -22,6 +22,7 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var btnBack: UIButton!
     var viewModel: PhotoVM!
 
     required init?(coder: NSCoder, viewModel: PhotoVM) {
@@ -49,6 +50,8 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
         btnSelectTapEvent()
 
         btnSaveTapEvent()
+
+        btnBackTapEvent()
     }
 
     private func viewWillAppearEvent() {
@@ -75,10 +78,15 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
                 guard let stampImage = stampImageView.createImageWithLabelOverlay(text: textLocation) else {
                     return
                 }
-
                 UIImageWriteToSavedPhotosAlbum(stampImage, nil, nil, nil)
                 self?.showToastView(message: "사진이 저장 되었습니다")
             }).disposed(by: bag)
+    }
+
+    private func btnBackTapEvent() {
+        btnBack.rx.tap.asDriverOnErrorNever()
+            .drive(rx.backPressed)
+            .disposed(by: bag)
     }
 
     // MARK: - OutputBinding
@@ -86,6 +94,7 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
     private func setupOutputBinding() {
         viewModel.location.asDriverOnErrorNever()
             .drive(onNext: { [weak self] (locationInfo) in
+                self?.lblLocation.isHidden = false
                 self?.lblLocation.text = locationInfo.location(locationScope: .gps)
             }).disposed(by: bag)
 
