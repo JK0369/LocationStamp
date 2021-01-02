@@ -37,6 +37,7 @@ final class OptionVC: BaseViewController, StoryboardInitializable, ErrorPresenta
         networkListener = .on
         setupErrorHandlerBinding()
         setupInputBinding()
+        setupOutputBinding()
     }
 
     private func setupInputBinding() {
@@ -57,6 +58,16 @@ final class OptionVC: BaseViewController, StoryboardInitializable, ErrorPresenta
         btnPhoto.rx.tap.asDriverOnErrorNever()
             .drive(onNext: { [weak self] in
                 self?.viewModel.didTapBtnPhoto()
+            }).disposed(by: bag)
+    }
+
+    private func setupOutputBinding() {
+        viewModel.requirePhotoPermission.asDriverOnErrorJustComplete()
+            .drive(onNext: { [weak self] in
+                self?.showAlertAndSetting(
+                    alertTitle: "사진 접근 권한이 필요합니다",
+                    actionTitle: "설정"
+                )
             }).disposed(by: bag)
     }
 }

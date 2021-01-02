@@ -11,6 +11,7 @@ import Domain
 import RxSwift
 import RxCocoa
 import XCoordinator
+import Photos
 
 class OptionVM: ErrorHandleable {
 
@@ -25,6 +26,7 @@ class OptionVM: ErrorHandleable {
     // MARK: - Output
 
     var showError = PublishRelay<ErrorData>()
+    let requirePhotoPermission = PublishRelay<Void>()
 
     // MARK: - Properties
 
@@ -37,7 +39,29 @@ class OptionVM: ErrorHandleable {
     }
 
     func didTapBtnPhoto() {
-        dependencies.router.trigger(.photo)
+        checkPhotoPermission()
+    }
+
+    private func checkPhotoPermission() {
+        let state = PHPhotoLibrary.authorizationStatus()
+
+        switch state {
+        case .authorized:
+            dependencies.router.trigger(.photo)
+        case .denied:
+            requirePhotoPermission.accept(())
+        default: // .limited, .restricted, .notDetermined:
+            PHPhotoLibrary.requestAuthorization { [weak self] (status) in
+                switch status {
+                case .authorized:
+                    self?.dependencies.router.trigger(.photo)
+                case .denied:
+                    self?.requirePhotoPermission.accept(())
+                default:
+                    break
+                }
+            }
+        }
     }
 
 }
