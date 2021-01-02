@@ -14,9 +14,10 @@ import XCoordinator
 import Moya
 import CoreLocation
 
-class PhotoVM: ErrorHandleable {
+class PhotoVM: NSObject, ErrorHandleable {
 
     var locationManager: CLLocationManager!
+    var imagePickerController: UIImagePickerController!
 
     struct Dependencies {
         let router: UnownedRouter<PhotoRoute>
@@ -25,12 +26,16 @@ class PhotoVM: ErrorHandleable {
 
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
+        imagePickerController = UIImagePickerController()
+        super.init()
+        imagePickerController.delegate = self
     }
 
     // MARK: - Output
 
     var showError = PublishRelay<ErrorData>()
     let location = PublishRelay<LocationInfo>()
+    let updateImage = PublishRelay<UIImage>()
 
     // MARK: - Properties
 
@@ -40,6 +45,7 @@ class PhotoVM: ErrorHandleable {
     // MARK: - Handling View Input
 
     func viewWillAppear() {
+        imagePickerController.sourceType = .photoLibrary
     }
 
     func didTapBtnReverseGeoCoding() {
@@ -76,11 +82,28 @@ class PhotoVM: ErrorHandleable {
             }.disposed(by: bag)
     }
 
+    func didTapBtnSelect() {
+        routeToPicker(vc: imagePickerController)
+    }
+
     private func coordinate() -> Coordinate {
         locationManager = CLLocationManager()
         let coordinate = locationManager.location?.coordinate
         let lat = Double(coordinate?.latitude ?? 0)
         let lng = Double(coordinate?.longitude ?? 0)
         return Coordinate(lat: lat, lng: lng)
+    }
+
+    private func routeToPicker(vc: UIImagePickerController) {
+        dependencies.router.trigger(.present(vc))
+    }
+}
+
+extension PhotoVM: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            updateImage.accept(image)
+        }
+        dependencies.router.trigger(.back)
     }
 }

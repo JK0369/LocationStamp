@@ -17,42 +17,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZa-I8-lmd">
-                                <rect key="frame" x="184.5" y="60" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8Z-MQ-IL9">
-                                <rect key="frame" x="140.5" y="433" width="133" height="30"/>
+                                <rect key="frame" x="140.5" y="787.5" width="133" height="30"/>
                                 <state key="normal" title="reverse-geoCoding"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mP1-VT-GQC">
-                                <rect key="frame" x="186.5" y="471" width="41.5" height="20.5"/>
+                                <rect key="frame" x="186.5" y="825.5" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctD-I5-eiE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZa-I8-lmd">
+                                        <rect key="frame" x="184.5" y="14" width="45" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8O-Zx-DEh">
+                                        <rect key="frame" x="354" y="9" width="44" height="30"/>
+                                        <state key="normal" title="Select"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Cqz-9B-h62"/>
+                                    <constraint firstItem="nZa-I8-lmd" firstAttribute="centerX" secondItem="ctD-I5-eiE" secondAttribute="centerX" id="WYN-6Q-9wm"/>
+                                    <constraint firstAttribute="trailing" secondItem="r8O-Zx-DEh" secondAttribute="trailing" constant="16" id="Zo8-ZZ-r4D"/>
+                                    <constraint firstItem="nZa-I8-lmd" firstAttribute="centerY" secondItem="ctD-I5-eiE" secondAttribute="centerY" id="jHH-1t-cnx"/>
+                                    <constraint firstItem="r8O-Zx-DEh" firstAttribute="centerY" secondItem="ctD-I5-eiE" secondAttribute="centerY" id="jiU-kd-Osy"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qfn-DD-ms3">
+                                <rect key="frame" x="0.0" y="92" width="414" height="679.5"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tst-99-MgS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="l8Z-MQ-IL9" firstAttribute="centerY" secondItem="fiq-4R-5GM" secondAttribute="centerY" id="JKE-Nd-bUa"/>
-                            <constraint firstItem="l8Z-MQ-IL9" firstAttribute="centerX" secondItem="fiq-4R-5GM" secondAttribute="centerX" id="MsQ-I0-5p0"/>
-                            <constraint firstItem="mP1-VT-GQC" firstAttribute="centerX" secondItem="fiq-4R-5GM" secondAttribute="centerX" id="V0x-Lr-qMg"/>
-                            <constraint firstItem="nZa-I8-lmd" firstAttribute="centerX" secondItem="fiq-4R-5GM" secondAttribute="centerX" id="pCQ-Lw-Mc5"/>
-                            <constraint firstItem="nZa-I8-lmd" firstAttribute="top" secondItem="tst-99-MgS" secondAttribute="top" constant="16" id="wb8-7Y-ztD"/>
+                            <constraint firstItem="Qfn-DD-ms3" firstAttribute="top" secondItem="ctD-I5-eiE" secondAttribute="bottom" id="68z-uZ-hH9"/>
+                            <constraint firstItem="l8Z-MQ-IL9" firstAttribute="centerX" secondItem="fiq-4R-5GM" secondAttribute="centerX" id="G4a-kw-ADt"/>
+                            <constraint firstItem="tst-99-MgS" firstAttribute="bottom" secondItem="mP1-VT-GQC" secondAttribute="bottom" constant="16" id="LEV-60-SMg"/>
+                            <constraint firstItem="ctD-I5-eiE" firstAttribute="top" secondItem="tst-99-MgS" secondAttribute="top" id="ST2-hy-0dC"/>
+                            <constraint firstItem="Qfn-DD-ms3" firstAttribute="leading" secondItem="tst-99-MgS" secondAttribute="leading" id="WZb-Jp-idM"/>
+                            <constraint firstItem="mP1-VT-GQC" firstAttribute="centerX" secondItem="fiq-4R-5GM" secondAttribute="centerX" id="poI-r8-4kq"/>
+                            <constraint firstItem="tst-99-MgS" firstAttribute="trailing" secondItem="Qfn-DD-ms3" secondAttribute="trailing" id="uYO-Gt-pNv"/>
+                            <constraint firstItem="l8Z-MQ-IL9" firstAttribute="top" secondItem="Qfn-DD-ms3" secondAttribute="bottom" constant="16" id="wb9-0Q-rrn"/>
+                            <constraint firstItem="tst-99-MgS" firstAttribute="trailing" secondItem="ctD-I5-eiE" secondAttribute="trailing" id="xHa-my-GqC"/>
                             <constraint firstItem="mP1-VT-GQC" firstAttribute="top" secondItem="l8Z-MQ-IL9" secondAttribute="bottom" constant="8" id="xo2-XC-odA"/>
+                            <constraint firstItem="ctD-I5-eiE" firstAttribute="leading" secondItem="tst-99-MgS" secondAttribute="leading" id="ya9-Gp-FFu"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="btnReverseGeoCoding" destination="l8Z-MQ-IL9" id="qFq-O4-RTX"/>
+                        <outlet property="btnSelect" destination="r8O-Zx-DEh" id="JtE-Lf-VtE"/>
+                        <outlet property="imageView" destination="Qfn-DD-ms3" id="J28-J9-jmf"/>
                         <outlet property="lblLocation" destination="mP1-VT-GQC" id="gX4-MT-Qvf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bC-wR-JcM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="129"/>
+            <point key="canvasLocation" x="140.57971014492756" y="128.57142857142856"/>
         </scene>
     </scenes>
     <resources>
