@@ -30,10 +30,16 @@
                                         <rect key="frame" x="354" y="9" width="44" height="30"/>
                                         <state key="normal" title="Select"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJX-lZ-PLv">
+                                        <rect key="frame" x="16" y="12" width="24" height="24"/>
+                                        <state key="normal" image="gnb_24_back_bk"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="hJX-lZ-PLv" firstAttribute="leading" secondItem="ctD-I5-eiE" secondAttribute="leading" constant="16" id="Am3-ER-tMi"/>
                                     <constraint firstAttribute="height" constant="48" id="Cqz-9B-h62"/>
+                                    <constraint firstItem="hJX-lZ-PLv" firstAttribute="centerY" secondItem="ctD-I5-eiE" secondAttribute="centerY" id="GJQ-Hi-oUw"/>
                                     <constraint firstItem="nZa-I8-lmd" firstAttribute="centerX" secondItem="ctD-I5-eiE" secondAttribute="centerX" id="WYN-6Q-9wm"/>
                                     <constraint firstAttribute="trailing" secondItem="r8O-Zx-DEh" secondAttribute="trailing" constant="16" id="Zo8-ZZ-r4D"/>
                                     <constraint firstItem="nZa-I8-lmd" firstAttribute="centerY" secondItem="ctD-I5-eiE" secondAttribute="centerY" id="jHH-1t-cnx"/>
@@ -84,6 +90,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gnb_24_back_bk" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
