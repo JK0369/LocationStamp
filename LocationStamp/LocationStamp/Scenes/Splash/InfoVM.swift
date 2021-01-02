@@ -44,7 +44,32 @@ class InfoVM: NSObject, ErrorHandleable {
     }
 
     func didTapBtnConfrim() {
-        dependencies.router.trigger(.option)
+
+        let currentState = CLLocationManager.authorizationStatus()
+        switch currentState {
+        case .restricted, .denied:
+            requireLocationAuth.accept(())
+            return
+        case .authorizedAlways, .authorizedWhenInUse:
+            dependencies.router.trigger(.option)
+        default:
+            break
+        }
+
+        if #available(iOS 14.0, *) {
+            let accuracyState = CLLocationManager().accuracyAuthorization
+            switch accuracyState {
+            case .reducedAccuracy:
+                requireLocationAuth.accept(())
+                dependencies.router.trigger(.option)
+                return
+            default:
+                break
+            }
+        }
+
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestLocation()
     }
 }
 

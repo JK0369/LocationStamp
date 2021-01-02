@@ -12,20 +12,11 @@ import RxSwift
 import RxCocoa
 import XCoordinator
 import Moya
-
-struct LocationInfo {
-    let PricipalSubdivision: String
-    let city: String
-    let locality: String
-    let lat: Double
-    let lng: Double
-
-    func location() -> String {
-        PricipalSubdivision + " " + city + " " + locality
-    }
-}
+import CoreLocation
 
 class PhotoVM: ErrorHandleable {
+
+    var locationManager: CLLocationManager!
 
     struct Dependencies {
         let router: UnownedRouter<PhotoRoute>
@@ -52,7 +43,13 @@ class PhotoVM: ErrorHandleable {
     }
 
     func didTapBtnReverseGeoCoding() {
-        let request = ReverseGeoCodingRequest(latitude: 37.325130462646484, longitude: 127.1183853149414)
+
+        let coor = coordinate()
+        if coor.lat == 0 {
+            return
+        }
+
+        let request = ReverseGeoCodingRequest(latitude: coor.lat, longitude: coor.lng)
         dependencies.ReverseGeoCodingUsecase.rx.request(.reverseGeoCoding(request))
             .map(ReverseGeoCodingResponse.self)
             .observeOn(MainScheduler.instance)
@@ -65,7 +62,7 @@ class PhotoVM: ErrorHandleable {
                     let lat = response.latitude
                     let lng = response.longitude
                     let locationInfo = LocationInfo(
-                        PricipalSubdivision: priocipalSubdivision,
+                        pricipalSubdivision: priocipalSubdivision,
                         city: city,
                         locality: locality,
                         lat: lat,
@@ -79,4 +76,11 @@ class PhotoVM: ErrorHandleable {
             }.disposed(by: bag)
     }
 
+    private func coordinate() -> Coordinate {
+        locationManager = CLLocationManager()
+        let coordinate = locationManager.location?.coordinate
+        let lat = Double(coordinate?.latitude ?? 0)
+        let lng = Double(coordinate?.longitude ?? 0)
+        return Coordinate(lat: lat, lng: lng)
+    }
 }

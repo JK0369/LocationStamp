@@ -40,6 +40,9 @@
 		E04ED14A259A2F6A00203ACD /* DialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ED12F259A2F6A00203ACD /* DialogVC.swift */; };
 		E04ED14B259A2F6A00203ACD /* Dialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04ED130259A2F6A00203ACD /* Dialog.storyboard */; };
 		E04ED2C6259A40F800203ACD /* Pods_Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB91E2756040156080179C97 /* Pods_Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E08E5B4325A0492C00305226 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E5B4225A0492C00305226 /* Coordinate.swift */; };
+		E08E5B4525A049F900305226 /* LocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E5B4425A049F900305226 /* LocationInfo.swift */; };
+		E08E5B4725A0577200305226 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E5B4625A0577200305226 /* ImageFileManager.swift */; };
 		E0BC5088259A2E4300122E7D /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = E0BC5086259A2E4300122E7D /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -97,6 +100,9 @@
 		E04ED12E259A2F6A00203ACD /* DialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogView.swift; sourceTree = "<group>"; };
 		E04ED12F259A2F6A00203ACD /* DialogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogVC.swift; sourceTree = "<group>"; };
 		E04ED130259A2F6A00203ACD /* Dialog.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dialog.storyboard; sourceTree = "<group>"; };
+		E08E5B4225A0492C00305226 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		E08E5B4425A049F900305226 /* LocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfo.swift; sourceTree = "<group>"; };
+		E08E5B4625A0577200305226 /* ImageFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 		E0BC5083259A2E4300122E7D /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BC5086259A2E4300122E7D /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		E0BC5087259A2E4300122E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 			children = (
 				E04ED109259A2F6A00203ACD /* StoryboardInitializable.swift */,
 				E04ED10A259A2F6A00203ACD /* PostTaskManager.swift */,
+				E08E5B4625A0577200305226 /* ImageFileManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -238,6 +245,7 @@
 		E04ED126259A2F6A00203ACD /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				E08E5B4125A0492200305226 /* Model */,
 				E04ED127259A2F6A00203ACD /* BaseViewController.swift */,
 				E04ED128259A2F6A00203ACD /* View */,
 			);
@@ -271,6 +279,15 @@
 				E04ED130259A2F6A00203ACD /* Dialog.storyboard */,
 			);
 			path = Dialog;
+			sourceTree = "<group>";
+		};
+		E08E5B4125A0492200305226 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E08E5B4225A0492C00305226 /* Coordinate.swift */,
+				E08E5B4425A049F900305226 /* LocationInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E0BC5079259A2E4300122E7D = {
@@ -429,8 +446,10 @@
 				E04ED13E259A2F6A00203ACD /* BaseResponsable.swift in Sources */,
 				E04ED13A259A2F6A00203ACD /* BaseServiceError.swift in Sources */,
 				E04ED145259A2F6A00203ACD /* BaseViewController.swift in Sources */,
+				E08E5B4325A0492C00305226 /* Coordinate.swift in Sources */,
 				E04ED144259A2F6A00203ACD /* KeyValueStore.swift in Sources */,
 				E04ED136259A2F6A00203ACD /* ErrorHandleable.swift in Sources */,
+				E08E5B4525A049F900305226 /* LocationInfo.swift in Sources */,
 				E03CE583259CD67200CA17D9 /* ReverseGeoCodingRequest.swift in Sources */,
 				E04ED13B259A2F6A00203ACD /* RequestLogginPlugin.swift in Sources */,
 				E04ED146259A2F6A00203ACD /* ToastMessageView.swift in Sources */,
@@ -445,6 +464,7 @@
 				E04ED13D259A2F6A00203ACD /* AppServiceSetting.swift in Sources */,
 				E04ED131259A2F6A00203ACD /* StoryboardInitializable.swift in Sources */,
 				E04ED137259A2F6A00203ACD /* ErrorPresentable.swift in Sources */,
+				E08E5B4725A0577200305226 /* ImageFileManager.swift in Sources */,
 				E04ED142259A2F6A00203ACD /* UIView.swift in Sources */,
 				E04ED149259A2F6A00203ACD /* DialogView.swift in Sources */,
 				E04ED13C259A2F6A00203ACD /* BaseHeader.swift in Sources */,
