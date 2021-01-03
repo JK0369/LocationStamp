@@ -12,10 +12,11 @@ import XCoordinator
 
 indirect enum OptionRoute: Route {
     case option
-    case photo
+    case photo(UIImage?)
 
     case present(UIImagePickerController)
     case popAndPush(OptionRoute)
+    case dismiss
 }
 
 class OptionCoordinator: BaseNavigationCoordinator<OptionRoute> {
@@ -34,8 +35,8 @@ class OptionCoordinator: BaseNavigationCoordinator<OptionRoute> {
             let vc = OptionBuilder.build(router: unownedRouter, postTaskManager: postTaskManager)
             return .set([vc])
 
-        case .photo:
-            let coordinator = PhotoCoordinator(rootViewController: rootViewController, postTaskManager: postTaskManager, initialRoute: .photo)
+        case .photo(let image):
+            let coordinator = PhotoCoordinator(rootViewController: rootViewController, postTaskManager: postTaskManager, initialRoute: .photo(image))
             return .addChild(coordinator)
 
         case .present(let vc):
@@ -43,6 +44,9 @@ class OptionCoordinator: BaseNavigationCoordinator<OptionRoute> {
 
         case .popAndPush(let route):
             return popAndPush(route: route)
+
+        case .dismiss:
+            return .dismiss()
         }
     }
 

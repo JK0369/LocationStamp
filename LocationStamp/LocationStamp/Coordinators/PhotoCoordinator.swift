@@ -12,7 +12,7 @@ import XCoordinator
 import UIKit
 
 indirect enum PhotoRoute: Route {
-    case photo
+    case photo(UIImage?)
 
     case present(UIImagePickerController)
     case popAndPush(PhotoRoute)
@@ -30,8 +30,8 @@ class PhotoCoordinator: BaseNavigationCoordinator<PhotoRoute> {
 
     override func prepareTransition(for route: PhotoRoute) -> NavigationTransition {
         switch route {
-        case .photo:
-            let vc = PhotoBuilder.build(router: unownedRouter, postTaskManager: postTaskManager)
+        case .photo(let image):
+            let vc = PhotoBuilder.build(router: unownedRouter, postTaskManager: postTaskManager, image: image)
             return .push(vc)
 
         case .present(let vc):

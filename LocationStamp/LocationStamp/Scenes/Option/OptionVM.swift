@@ -82,14 +82,14 @@ class OptionVM: NSObject, ErrorHandleable {
 
         switch state {
         case .authorized:
-            dependencies.router.trigger(.photo)
+            dependencies.router.trigger(.photo(nil))
         case .denied:
             requirePermission.accept("사진")
         default: // .limited, .restricted, .notDetermined:
             PHPhotoLibrary.requestAuthorization { [weak self] (status) in
                 switch status {
                 case .authorized:
-                    self?.dependencies.router.trigger(.photo)
+                    self?.dependencies.router.trigger(.photo(nil))
                 case .denied:
                     self?.requirePermission.accept("사진")
                 default:
@@ -102,5 +102,10 @@ class OptionVM: NSObject, ErrorHandleable {
 }
 
 extension OptionVM: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            dependencies.router.trigger(.dismiss)
+            dependencies.router.trigger(.photo(image))
+        }
+    }
 }

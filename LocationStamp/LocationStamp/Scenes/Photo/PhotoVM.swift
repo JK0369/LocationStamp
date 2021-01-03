@@ -22,6 +22,7 @@ class PhotoVM: NSObject, ErrorHandleable {
     struct Dependencies {
         let router: UnownedRouter<PhotoRoute>
         let ReverseGeoCodingUsecase: MoyaProvider<ReverseGeoCodingTarget>
+        let image: UIImage?
     }
 
     init(dependencies: Dependencies) {
@@ -46,6 +47,11 @@ class PhotoVM: NSObject, ErrorHandleable {
     // MARK: - Handling View Input
 
     func viewWillAppear() {
+        if let image = dependencies.image {
+            updateImage.accept(image)
+            reverseGeoCoding()
+            return
+        }
         imagePickerController.sourceType = .photoLibrary
     }
 
