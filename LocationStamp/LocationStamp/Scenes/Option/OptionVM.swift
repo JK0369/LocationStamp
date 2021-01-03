@@ -12,8 +12,9 @@ import RxSwift
 import RxCocoa
 import XCoordinator
 import Photos
+import AVFoundation
 
-class OptionVM: ErrorHandleable {
+class OptionVM: NSObject, ErrorHandleable {
 
     struct Dependencies {
         let router: UnownedRouter<OptionRoute>
@@ -23,10 +24,12 @@ class OptionVM: ErrorHandleable {
         self.dependencies = dependencies
     }
 
+    let imagePickerController = UIImagePickerController()
+
     // MARK: - Output
 
     var showError = PublishRelay<ErrorData>()
-    let requirePhotoPermission = PublishRelay<Void>()
+    let requirePermission = PublishRelay<String>()
 
     // MARK: - Properties
 
@@ -36,27 +39,59 @@ class OptionVM: ErrorHandleable {
     // MARK: - Handling View Input
 
     func viewWillAppear() {
+        imagePickerController.delegate = self
     }
 
     func didTapBtnPhoto() {
         checkPhotoPermission()
     }
 
-    private func checkPhotoPermission() {
+    func didTapBtnCamera() {
+        checkCameraPermission()
+    }
+
+    private func checkCameraPermission() {
+        imagePickerController.sourceType = .camera
+        AVCaptureDevice.requestAccess(for: .video) { [weak self] (granted: Bool) in
+            if granted {
+                self?.presentToImagePicker()
+                return
+            }
+            let status = AVCaptureDevice.authorizationStatus(for: .video)
+            switch status {
+            case .authorized:
+                self?.presentToImagePicker()
+            default:
+                self?.requirePermission.accept("카메라")
+            }
+
+        }
+    }
+
+    private func presentToImagePicker() {
+        DispatchQueue.main.async { [weak self] in
+            guard let imagePickerController = self?.imagePickerController else {
+                return
+            }
+            self?.dependencies.router.trigger(.present(imagePickerController))
+        }
+    }
+
+    private func checkPhotoPermission() {imagePickerController.sourceType = .photoLibrary
         let state = PHPhotoLibrary.authorizationStatus()
 
         switch state {
         case .authorized:
             dependencies.router.trigger(.photo)
         case .denied:
-            requirePhotoPermission.accept(())
+            requirePermission.accept("사진")
         default: // .limited, .restricted, .notDetermined:
             PHPhotoLibrary.requestAuthorization { [weak self] (status) in
                 switch status {
                 case .authorized:
                     self?.dependencies.router.trigger(.photo)
                 case .denied:
-                    self?.requirePhotoPermission.accept(())
+                    self?.requirePermission.accept("사진")
                 default:
                     break
                 }
@@ -64,4 +99,8 @@ class OptionVM: ErrorHandleable {
         }
     }
 
+}
+
+extension OptionVM: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
 }

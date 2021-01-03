@@ -14,6 +14,7 @@ indirect enum OptionRoute: Route {
     case option
     case photo
 
+    case present(UIImagePickerController)
     case popAndPush(OptionRoute)
 }
 
@@ -36,6 +37,9 @@ class OptionCoordinator: BaseNavigationCoordinator<OptionRoute> {
         case .photo:
             let coordinator = PhotoCoordinator(rootViewController: rootViewController, postTaskManager: postTaskManager, initialRoute: .photo)
             return .addChild(coordinator)
+
+        case .present(let vc):
+            return .present(vc)
 
         case .popAndPush(let route):
             return popAndPush(route: route)

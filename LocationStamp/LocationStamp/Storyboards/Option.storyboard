@@ -27,6 +27,10 @@
                                 <rect key="frame" x="186.5" y="181" width="41" height="30"/>
                                 <state key="normal" title="Photo"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYb-oY-O3C">
+                                <rect key="frame" x="180" y="241" width="54" height="30"/>
+                                <state key="normal" title="Camera"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GE8-hD-zar"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -34,10 +38,13 @@
                             <constraint firstItem="N9L-dc-d5T" firstAttribute="top" secondItem="GE8-hD-zar" secondAttribute="top" constant="16" id="34t-qB-rDR"/>
                             <constraint firstItem="ouj-xu-dLa" firstAttribute="top" secondItem="N9L-dc-d5T" secondAttribute="bottom" constant="100" id="EPW-gd-apm"/>
                             <constraint firstItem="ouj-xu-dLa" firstAttribute="centerX" secondItem="5tm-e9-MZc" secondAttribute="centerX" id="LBz-fF-QBp"/>
+                            <constraint firstItem="aYb-oY-O3C" firstAttribute="top" secondItem="ouj-xu-dLa" secondAttribute="bottom" constant="30" id="NxN-pc-PSi"/>
+                            <constraint firstItem="aYb-oY-O3C" firstAttribute="centerX" secondItem="5tm-e9-MZc" secondAttribute="centerX" id="StG-BR-mla"/>
                             <constraint firstItem="N9L-dc-d5T" firstAttribute="centerX" secondItem="5tm-e9-MZc" secondAttribute="centerX" id="zkW-Cd-tcN"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnCamera" destination="aYb-oY-O3C" id="NoX-gZ-Dwj"/>
                         <outlet property="btnPhoto" destination="ouj-xu-dLa" id="ASB-kc-7dW"/>
                     </connections>
                 </viewController>

@@ -19,6 +19,7 @@ final class OptionVC: BaseViewController, StoryboardInitializable, ErrorPresenta
     // MARK: - Property
 
     @IBOutlet weak var btnPhoto: UIButton!
+    @IBOutlet weak var btnCamera: UIButton!
     var viewModel: OptionVM!
 
     required init?(coder: NSCoder, viewModel: OptionVM) {
@@ -44,6 +45,8 @@ final class OptionVC: BaseViewController, StoryboardInitializable, ErrorPresenta
         viewWillAppearEvent()
 
         btnPhotoTapEvent()
+
+        btnCameraTapEvent()
     }
 
     private func viewWillAppearEvent() {
@@ -61,11 +64,20 @@ final class OptionVC: BaseViewController, StoryboardInitializable, ErrorPresenta
             }).disposed(by: bag)
     }
 
-    private func setupOutputBinding() {
-        viewModel.requirePhotoPermission.asDriverOnErrorJustComplete()
+    private func btnCameraTapEvent() {
+        btnCamera.rx.tap.asDriverOnErrorNever()
             .drive(onNext: { [weak self] in
+                self?.viewModel.didTapBtnCamera()
+            }).disposed(by: bag)
+    }
+
+    // MARK: - OutputBinding
+
+    private func setupOutputBinding() {
+        viewModel.requirePermission.asDriverOnErrorJustComplete()
+            .drive(onNext: { [weak self] (title) in
                 self?.showAlertAndSetting(
-                    alertTitle: "사진 접근 권한이 필요합니다",
+                    alertTitle: "\(title) 접근 권한이 필요합니다",
                     actionTitle: "설정"
                 )
             }).disposed(by: bag)

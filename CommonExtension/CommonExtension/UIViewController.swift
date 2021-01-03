@@ -53,6 +53,9 @@ public extension UIViewController {
         alertController.addAction(UIAlertAction(title: actionTitle, style: .default, handler: { (_) in
             actionCallback?()
         }))
+        alertController.addAction(.init(title: "취소", style: .cancel, handler: { [weak self] (_) in
+            self?.dismiss(animated: true, completion: nil)
+        }))
         present(alertController, animated: true, completion: nil)
     }
     
