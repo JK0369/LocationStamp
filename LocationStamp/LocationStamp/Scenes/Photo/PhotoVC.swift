@@ -74,10 +74,10 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
     private func btnSaveTapEvent() {
         btnSave.rx.tap.asDriverOnErrorNever()
             .drive(onNext: { [weak self] in
-                guard let stampImageView = self?.imageView, let textLocation = self?.lblLocation.text else {
+                guard let stampImageView = self?.imageView, let textLocation = self?.lblLocation.text, let isFromCamera = self?.viewModel.isFromCamera else {
                     return
                 }
-                guard let stampImage = stampImageView.createImageWithLabelOverlay(text: textLocation) else {
+                guard let stampImage = stampImageView.createImageWithLabelOverlay(text: textLocation, isFromCamera: isFromCamera) else {
                     return
                 }
                 UIImageWriteToSavedPhotosAlbum(stampImage, nil, nil, nil)

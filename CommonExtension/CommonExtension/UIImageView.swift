@@ -74,7 +74,7 @@ import UIKit
 */
 
 public extension UIImageView {
-    func createImageWithLabelOverlay(text: String) -> UIImage? {
+    func createImageWithLabelOverlay(text: String, isFromCamera: Bool = false) -> UIImage? {
         let imageSize = self.image?.size ?? .zero
         UIGraphicsBeginImageContextWithOptions(CGSize(width: imageSize.width, height: imageSize.height), false, 1.0)
         let currentView = UIView(frame: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
@@ -91,8 +91,8 @@ public extension UIImageView {
 //                 print("font:", font)
 //             }
 //         }
-
-        let font = UIFont(name:"Noteworthy-Light" , size: 34)
+        let fontSize: CGFloat = isFromCamera ? 100 : 34
+        let font = UIFont(name:"Noteworthy-Light" , size: fontSize)
         let attributedStr = NSMutableAttributedString(string: text)
         attributedStr.addAttribute(NSAttributedString.Key(rawValue: kCTFontAttributeName as String), value: font ?? .init(), range: (text as NSString).range(of: text))
         label.attributedText = attributedStr

@@ -18,6 +18,7 @@ class PhotoVM: NSObject, ErrorHandleable {
 
     var locationManager: CLLocationManager!
     var imagePickerController = UIImagePickerController()
+    var isFromCamera = false
 
     struct Dependencies {
         let router: UnownedRouter<PhotoRoute>
@@ -50,6 +51,7 @@ class PhotoVM: NSObject, ErrorHandleable {
         if let image = dependencies.image {
             updateImage.accept(image)
             reverseGeoCoding()
+            isFromCamera = true
             return
         }
         imagePickerController.sourceType = .photoLibrary
@@ -90,6 +92,7 @@ class PhotoVM: NSObject, ErrorHandleable {
     }
 
     func didTapBtnSelect() {
+        isFromCamera = false
         routeToPicker(vc: imagePickerController)
     }
 
