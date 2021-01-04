@@ -18,7 +18,8 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
 
     // MARK: - Propertye
 
-    @IBOutlet weak var btnSelect: UIButton!
+    @IBOutlet weak var btnPhoto: UIButton!
+    @IBOutlet weak var btnCamera: UIButton!
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var btnSave: UIButton!
@@ -40,16 +41,22 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         networkListener = .on
         setupErrorHandlerBinding()
         setupInputBinding()
         setupOutputBinding()
     }
 
+    private func setupView() {
+        btnCamera.setFloatingStyle()
+        btnPhoto.setFloatingStyle()
+    }
+
     private func setupInputBinding() {
         viewWillAppearEvent()
 
-        btnSelectTapEvent()
+        btnPhotoTapEvent()
 
         btnSaveTapEvent()
 
@@ -64,10 +71,10 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
             }).disposed(by: bag)
     }
 
-    private func btnSelectTapEvent() {
-        btnSelect.rx.tap.asDriverOnErrorNever()
+    private func btnPhotoTapEvent() {
+        btnPhoto.rx.tap.asDriverOnErrorNever()
             .drive(onNext: { [weak self] in
-                self?.viewModel.didTapBtnSelect()
+                self?.viewModel.didTapBtnPhoto()
             }).disposed(by: bag)
     }
 

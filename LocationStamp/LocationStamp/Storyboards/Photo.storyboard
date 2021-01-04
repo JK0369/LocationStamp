@@ -26,13 +26,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8O-Zx-DEh">
-                                        <rect key="frame" x="354" y="9" width="44" height="30"/>
-                                        <state key="normal" title="Select"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8O-Zx-DEh">
+                                        <rect key="frame" x="374" y="13" width="24" height="22"/>
+                                        <state key="normal" image="photo" catalog="system"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJX-lZ-PLv">
                                         <rect key="frame" x="16" y="12" width="24" height="24"/>
                                         <state key="normal" image="gnb_24_back_bk"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8h-uG-eDU">
+                                        <rect key="frame" x="333.5" y="13" width="24.5" height="22"/>
+                                        <state key="normal" image="camera" catalog="system"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -40,6 +44,8 @@
                                     <constraint firstItem="hJX-lZ-PLv" firstAttribute="leading" secondItem="ctD-I5-eiE" secondAttribute="leading" constant="16" id="Am3-ER-tMi"/>
                                     <constraint firstAttribute="height" constant="48" id="Cqz-9B-h62"/>
                                     <constraint firstItem="hJX-lZ-PLv" firstAttribute="centerY" secondItem="ctD-I5-eiE" secondAttribute="centerY" id="GJQ-Hi-oUw"/>
+                                    <constraint firstItem="r8O-Zx-DEh" firstAttribute="leading" secondItem="U8h-uG-eDU" secondAttribute="trailing" constant="16" id="Qnu-6W-QBV"/>
+                                    <constraint firstItem="U8h-uG-eDU" firstAttribute="centerY" secondItem="ctD-I5-eiE" secondAttribute="centerY" id="R4I-fn-Fvh"/>
                                     <constraint firstItem="nZa-I8-lmd" firstAttribute="centerX" secondItem="ctD-I5-eiE" secondAttribute="centerX" id="WYN-6Q-9wm"/>
                                     <constraint firstAttribute="trailing" secondItem="r8O-Zx-DEh" secondAttribute="trailing" constant="16" id="Zo8-ZZ-r4D"/>
                                     <constraint firstItem="nZa-I8-lmd" firstAttribute="centerY" secondItem="ctD-I5-eiE" secondAttribute="centerY" id="jHH-1t-cnx"/>
@@ -116,8 +122,9 @@
                     </view>
                     <connections>
                         <outlet property="btnBack" destination="hJX-lZ-PLv" id="Vak-cL-A0a"/>
+                        <outlet property="btnCamera" destination="U8h-uG-eDU" id="2N5-xU-Se8"/>
+                        <outlet property="btnPhoto" destination="r8O-Zx-DEh" id="MgV-yd-8HW"/>
                         <outlet property="btnSave" destination="FQ1-T4-khE" id="EYn-ZP-SaW"/>
-                        <outlet property="btnSelect" destination="r8O-Zx-DEh" id="JtE-Lf-VtE"/>
                         <outlet property="imageView" destination="Qfn-DD-ms3" id="J28-J9-jmf"/>
                         <outlet property="lblLocation" destination="5wc-SI-7i2" id="IRb-Px-Udm"/>
                         <outlet property="viewEmpty" destination="1bq-GV-QTM" id="gO3-Fo-Ese"/>
@@ -129,7 +136,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" catalog="system" width="128" height="94"/>
         <image name="gnb_24_back_bk" width="24" height="24"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Kingfisher
+import CommonExtension
 
 extension UIButton {
     func setImage(urlString: String) {
@@ -36,6 +36,11 @@ extension UIButton {
 
     func setFloatingStyle() {
         setShadow(color: .black, alpha: 0.2, xPoint: 0, yPoint: 6, blur: 10, spread: 0)
+    }
+
+    func setShadowRoundStyle() {
+        self.layer.cornerRadius = self.bounds.height / 2
+        self |> CommonExtension.applySketchShadow(color: .black, alpha: 0.12, xPoint: 0, yPoint: 1, blur: 6, spread: 0)
     }
 
     func setOutlineStyle(isSelect: Bool) {

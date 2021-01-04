@@ -91,7 +91,7 @@ class PhotoVM: NSObject, ErrorHandleable {
             }.disposed(by: bag)
     }
 
-    func didTapBtnSelect() {
+    func didTapBtnPhoto() {
         isFromCamera = false
         routeToPicker(vc: imagePickerController)
     }
