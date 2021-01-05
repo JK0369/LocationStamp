@@ -74,10 +74,17 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
     }
 
     private func btnPhotoTapEvent() {
-        btnPhoto.rx.tap.asDriverOnErrorNever()
-            .drive(onNext: { [weak self] in
-                self?.viewModel.didTapBtnPhoto()
-            }).disposed(by: bag)
+
+        let tapGesture = UITapGestureRecognizer()
+        viewEmpty.addGestureRecognizer(tapGesture)
+
+        Observable.merge(
+            tapGesture.rx.event.mapToVoid().asObservable(),
+            btnPhoto.rx.tap.asObservable()
+        ).asDriverOnErrorNever()
+        .drive(onNext: { [weak self] in
+            self?.viewModel.didTapBtnPhoto()
+        }).disposed(by: bag)
     }
 
     private func btnSaveTapEvent() {
