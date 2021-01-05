@@ -180,7 +180,6 @@ extension PhotoVM: UIImagePickerControllerDelegate, UINavigationControllerDelega
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             updateImage.accept(image)
             reverseGeoCoding()
-            return
         }
         dependencies.router.trigger(.back)
     }
