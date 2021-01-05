@@ -49,10 +49,10 @@ class OptionVM: NSObject, ErrorHandleable {
     func didTapBtnCamera() {
         checkCameraPermission()
     }
-
     
     private func checkCameraPermission() {
         imagePickerController.sourceType = .camera
+        imagePickerController.cameraFlashMode = .off
         AVCaptureDevice.requestAccess(for: .video) { [weak self] (granted: Bool) in
             if granted {
                 self?.presentToImagePicker()
