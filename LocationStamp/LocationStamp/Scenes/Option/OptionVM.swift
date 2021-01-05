@@ -50,6 +50,7 @@ class OptionVM: NSObject, ErrorHandleable {
         checkCameraPermission()
     }
 
+    
     private func checkCameraPermission() {
         imagePickerController.sourceType = .camera
         AVCaptureDevice.requestAccess(for: .video) { [weak self] (granted: Bool) in

@@ -35,7 +35,7 @@
                                         <state key="normal" image="gnb_24_back_bk"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8h-uG-eDU">
-                                        <rect key="frame" x="333.5" y="13" width="24.5" height="22"/>
+                                        <rect key="frame" x="323.5" y="13" width="24.5" height="22"/>
                                         <state key="normal" image="camera" catalog="system"/>
                                     </button>
                                 </subviews>
@@ -44,7 +44,7 @@
                                     <constraint firstItem="hJX-lZ-PLv" firstAttribute="leading" secondItem="ctD-I5-eiE" secondAttribute="leading" constant="16" id="Am3-ER-tMi"/>
                                     <constraint firstAttribute="height" constant="48" id="Cqz-9B-h62"/>
                                     <constraint firstItem="hJX-lZ-PLv" firstAttribute="centerY" secondItem="ctD-I5-eiE" secondAttribute="centerY" id="GJQ-Hi-oUw"/>
-                                    <constraint firstItem="r8O-Zx-DEh" firstAttribute="leading" secondItem="U8h-uG-eDU" secondAttribute="trailing" constant="16" id="Qnu-6W-QBV"/>
+                                    <constraint firstItem="r8O-Zx-DEh" firstAttribute="leading" secondItem="U8h-uG-eDU" secondAttribute="trailing" constant="26" id="Qnu-6W-QBV"/>
                                     <constraint firstItem="U8h-uG-eDU" firstAttribute="centerY" secondItem="ctD-I5-eiE" secondAttribute="centerY" id="R4I-fn-Fvh"/>
                                     <constraint firstItem="nZa-I8-lmd" firstAttribute="centerX" secondItem="ctD-I5-eiE" secondAttribute="centerX" id="WYN-6Q-9wm"/>
                                     <constraint firstAttribute="trailing" secondItem="r8O-Zx-DEh" secondAttribute="trailing" constant="16" id="Zo8-ZZ-r4D"/>

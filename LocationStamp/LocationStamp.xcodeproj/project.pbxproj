@@ -60,8 +60,8 @@
 		E0CB1894259CE90F001BD958 /* InfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB1893259CE90F001BD958 /* InfoBuilder.swift */; };
 		E0DF1A9B259C3AC400F24024 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B3259A2F4700203ACD /* Domain.framework */; };
 		E0DF1A9C259C3AC400F24024 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B3259A2F4700203ACD /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E0DF1A9D259C3AC600F24024 /* CommonExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B2259A2F4700203ACD /* CommonExtension.framework */; };
-		E0DF1A9E259C3AC600F24024 /* CommonExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B2259A2F4700203ACD /* CommonExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E0EF442F25A49A3B000B2573 /* CommonExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B2259A2F4700203ACD /* CommonExtension.framework */; };
+		E0EF443025A49A3B000B2573 /* CommonExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E04ED0B2259A2F4700203ACD /* CommonExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,7 +73,7 @@
 			files = (
 				E0DF1A9C259C3AC400F24024 /* Domain.framework in Embed Frameworks */,
 				E0B37E8E259AFF15004B257D /* Pods_LocationStamp.framework in Embed Frameworks */,
-				E0DF1A9E259C3AC600F24024 /* CommonExtension.framework in Embed Frameworks */,
+				E0EF443025A49A3B000B2573 /* CommonExtension.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,7 +147,7 @@
 			files = (
 				E0DF1A9B259C3AC400F24024 /* Domain.framework in Frameworks */,
 				E0B37E8D259AFF15004B257D /* Pods_LocationStamp.framework in Frameworks */,
-				E0DF1A9D259C3AC600F24024 /* CommonExtension.framework in Frameworks */,
+				E0EF442F25A49A3B000B2573 /* CommonExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

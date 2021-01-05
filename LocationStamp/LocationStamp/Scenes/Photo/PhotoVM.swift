@@ -13,6 +13,7 @@ import RxCocoa
 import XCoordinator
 import Moya
 import CoreLocation
+import AVFoundation
 
 class PhotoVM: NSObject, ErrorHandleable {
 
@@ -39,6 +40,7 @@ class PhotoVM: NSObject, ErrorHandleable {
     var showError = PublishRelay<ErrorData>()
     let location = PublishRelay<LocationInfo>()
     let updateImage = PublishRelay<UIImage>()
+    let requirePermission = PublishRelay<Void>()
 
     // MARK: - Properties
 
@@ -93,7 +95,32 @@ class PhotoVM: NSObject, ErrorHandleable {
 
     func didTapBtnPhoto() {
         isFromCamera = false
-        routeToPicker(vc: imagePickerController)
+        routeToPicker()
+    }
+
+    func didTapBtnCamera() {
+        isFromCamera = true
+        checkCameraPermission()
+    }
+
+    private func checkCameraPermission() {
+        imagePickerController.sourceType = .camera
+        imagePickerController.cameraFlashMode = .off
+        AVCaptureDevice.requestAccess(for: .video) { [weak self] (granted: Bool) in
+            if granted {
+                self?.routeToPicker()
+                return
+            }
+            let status = AVCaptureDevice.authorizationStatus(for: .video)
+            switch status {
+            case .authorized:
+                self?.routeToPicker()
+                return
+            default:
+                self?.requirePermission.accept(())
+            }
+
+        }
     }
 
     private func coordinate() -> Coordinate {
@@ -104,8 +131,13 @@ class PhotoVM: NSObject, ErrorHandleable {
         return Coordinate(lat: lat, lng: lng)
     }
 
-    private func routeToPicker(vc: UIImagePickerController) {
-        dependencies.router.trigger(.present(vc))
+    private func routeToPicker() {
+        DispatchQueue.main.async { [weak self] in
+            guard let vc = self?.imagePickerController else {
+                return
+            }
+            self?.dependencies.router.trigger(.present(vc))
+        }
     }
 }
 

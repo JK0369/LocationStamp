@@ -60,6 +60,8 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
 
         btnSaveTapEvent()
 
+        btnCameraTapEvent()
+
         btnBackTapEvent()
     }
 
@@ -89,6 +91,13 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
                 }
                 UIImageWriteToSavedPhotosAlbum(stampImage, nil, nil, nil)
                 self?.showToastView(message: "사진이 저장 되었습니다")
+            }).disposed(by: bag)
+    }
+
+    private func btnCameraTapEvent() {
+        btnCamera.rx.tap.asDriverOnErrorNever()
+            .drive(onNext: { [weak self] in
+                self?.viewModel.didTapBtnCamera()
             }).disposed(by: bag)
     }
 
