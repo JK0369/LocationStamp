@@ -43,7 +43,7 @@ class OptionVM: NSObject, ErrorHandleable {
     }
 
     func didTapBtnPhoto() {
-        checkPhotoPermission()
+        dependencies.router.trigger(.photo(nil))
     }
 
     func didTapBtnCamera() {
@@ -75,28 +75,6 @@ class OptionVM: NSObject, ErrorHandleable {
                 return
             }
             self?.dependencies.router.trigger(.present(imagePickerController))
-        }
-    }
-
-    private func checkPhotoPermission() {imagePickerController.sourceType = .photoLibrary
-        let state = PHPhotoLibrary.authorizationStatus()
-
-        switch state {
-        case .authorized:
-            dependencies.router.trigger(.photo(nil))
-        case .denied:
-            requirePermission.accept("사진")
-        default: // .limited, .restricted, .notDetermined:
-            PHPhotoLibrary.requestAuthorization { [weak self] (status) in
-                switch status {
-                case .authorized:
-                    self?.dependencies.router.trigger(.photo(nil))
-                case .denied:
-                    self?.requirePermission.accept("사진")
-                default:
-                    break
-                }
-            }
         }
     }
 

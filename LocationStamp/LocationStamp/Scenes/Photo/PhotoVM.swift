@@ -14,6 +14,7 @@ import XCoordinator
 import Moya
 import CoreLocation
 import AVFoundation
+import Photos
 
 class PhotoVM: NSObject, ErrorHandleable {
 
@@ -33,6 +34,13 @@ class PhotoVM: NSObject, ErrorHandleable {
         DispatchQueue.main.async {
             self.imagePickerController.delegate = self
         }
+
+        NotificationCenter.default.rx.notification(UIApplication.willEnterForegroundNotification)
+            .asDriverOnErrorNever()
+            .mapToVoid()
+            .drive(onNext: { [weak self] in
+                self?.checkPhotoPermission(completion: nil)
+            }).disposed(by: bag)
     }
 
     // MARK: - Output
@@ -40,7 +48,7 @@ class PhotoVM: NSObject, ErrorHandleable {
     var showError = PublishRelay<ErrorData>()
     let location = PublishRelay<LocationInfo>()
     let updateImage = PublishRelay<UIImage>()
-    let requirePermission = PublishRelay<Void>()
+    let requirePermission = PublishRelay<String>()
 
     // MARK: - Properties
 
@@ -50,13 +58,14 @@ class PhotoVM: NSObject, ErrorHandleable {
     // MARK: - Handling View Input
 
     func viewWillAppear() {
-        if let image = dependencies.image {
-            updateImage.accept(image)
-            reverseGeoCoding()
-            isFromCamera = true
-            return
-        }
         imagePickerController.sourceType = .photoLibrary
+        checkPhotoPermission { [weak self] in
+            if let image = self?.dependencies.image {
+                self?.updateImage.accept(image)
+                self?.reverseGeoCoding()
+                self?.isFromCamera = true
+            }
+        }
     }
 
     private func reverseGeoCoding() {
@@ -117,9 +126,34 @@ class PhotoVM: NSObject, ErrorHandleable {
                 self?.routeToPicker()
                 return
             default:
-                self?.requirePermission.accept(())
+                self?.requirePermission.accept("카메라")
             }
 
+        }
+    }
+
+    private func checkPhotoPermission(completion: (() -> Void)?) {
+        imagePickerController.sourceType = .photoLibrary
+        let state = PHPhotoLibrary.authorizationStatus()
+
+        switch state {
+        case .authorized:
+            completion?()
+        case .denied:
+            requirePermission.accept("사진")
+            return
+        default: // .limited, .restricted, .notDetermined:
+            PHPhotoLibrary.requestAuthorization { [weak self] (status) in
+                switch status {
+                case .authorized:
+                    completion?()
+                case .denied:
+                    self?.requirePermission.accept("사진")
+                default:
+                    return
+                }
+            }
+            return
         }
     }
 
@@ -146,6 +180,7 @@ extension PhotoVM: UIImagePickerControllerDelegate, UINavigationControllerDelega
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             updateImage.accept(image)
             reverseGeoCoding()
+            return
         }
         dependencies.router.trigger(.back)
     }

@@ -128,5 +128,13 @@ final class PhotoVC: BaseViewController, StoryboardInitializable, ErrorPresentab
                 self?.imageView.image = image
                 self?.viewEmpty.isHidden = true
             }).disposed(by: bag)
+
+        viewModel.requirePermission.asDriverOnErrorJustComplete()
+            .drive(onNext: { [weak self] (title) in
+                self?.showAlertAndSetting(
+                    alertTitle: "\(title) 접근 권한이 필요합니다",
+                    actionTitle: "설정"
+                )
+            }).disposed(by: bag)
     }
 }
