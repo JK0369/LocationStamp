@@ -37,6 +37,8 @@ class InfoVM: NSObject, ErrorHandleable {
 
     let dependencies: Dependencies
     let bag = DisposeBag()
+    var isTapBtnConfirmMoreThanOnce = false
+    var isSelectedAfterRequest = false
 
     // MARK: - Handling View Input
 
@@ -44,16 +46,26 @@ class InfoVM: NSObject, ErrorHandleable {
     }
 
     func didTapBtnConfrim() {
+        checkLocationPermission()
+    }
 
+    private func checkLocationPermission() {
         let currentState = CLLocationManager.authorizationStatus()
         switch currentState {
-        case .restricted, .denied:
+        case .authorizedAlways, .authorizedWhenInUse:
+            break
+        case .notDetermined:
+            if isSelectedAfterRequest {
+                requireLocationAuth.accept(())
+            } else {
+                locationManager.requestAlwaysAuthorization()
+                locationManager.requestLocation()
+                isSelectedAfterRequest = true
+            }
+            return
+        default:
             requireLocationAuth.accept(())
             return
-        case .authorizedAlways, .authorizedWhenInUse:
-            dependencies.router.trigger(.option)
-        default:
-            break
         }
 
         if #available(iOS 14.0, *) {
@@ -61,22 +73,25 @@ class InfoVM: NSObject, ErrorHandleable {
             switch accuracyState {
             case .reducedAccuracy:
                 requireLocationAuth.accept(())
-                dependencies.router.trigger(.option)
                 return
             default:
+                dependencies.router.trigger(.option)
                 break
             }
+        } else {
+            dependencies.router.trigger(.option)
         }
-
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestLocation()
     }
+
 }
 
 extension InfoVM: CLLocationManagerDelegate {
+    // 시스템 팝업에서 권한 거부를 선택한 경우의 delegate
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        checkLocationPermission()
     }
 
+    // 시스템 팝업에서 동의 관련 권한을 선택한 경우의 delegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     }
 
@@ -90,13 +105,19 @@ extension InfoVM: CLLocationManagerDelegate {
         }
     }
 
+    // 주의: 해당 함수는 locationManager객체가 만들어질때 delegate함수 실행
     @available(iOS 14, *)
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        guard isTapBtnConfirmMoreThanOnce == true else {
+            isTapBtnConfirmMoreThanOnce = true
+            return
+        }
 
         switch manager.accuracyAuthorization {
         case .reducedAccuracy:
             requireLocationAuth.accept(())
         default:
+            dependencies.router.trigger(.option)
             break
         }
 

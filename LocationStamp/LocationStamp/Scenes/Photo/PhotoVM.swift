@@ -20,7 +20,15 @@ class PhotoVM: NSObject, ErrorHandleable {
 
     var locationManager: CLLocationManager!
     var imagePickerController = UIImagePickerController()
-    var isFromCamera = false
+    var isFromCamera: Bool = false {
+        didSet {
+            if oldValue {
+                self.imagePickerController.sourceType = .camera
+            } else {
+                self.imagePickerController.sourceType = .photoLibrary
+            }
+        }
+    }
 
     struct Dependencies {
         let router: UnownedRouter<PhotoRoute>
@@ -31,15 +39,17 @@ class PhotoVM: NSObject, ErrorHandleable {
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
         super.init()
-        DispatchQueue.main.async {
-            self.imagePickerController.delegate = self
-        }
+
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        imagePickerController.delegate = self
 
         NotificationCenter.default.rx.notification(UIApplication.willEnterForegroundNotification)
             .asDriverOnErrorNever()
             .mapToVoid()
             .drive(onNext: { [weak self] in
                 self?.checkPhotoPermission(completion: nil)
+                self?.checkLocationPermission(completion: nil)
             }).disposed(by: bag)
     }
 
@@ -109,21 +119,92 @@ class PhotoVM: NSObject, ErrorHandleable {
 
     func didTapBtnCamera() {
         isFromCamera = true
-        checkCameraPermission()
+        checkCameraPermission { [weak self] in
+            self?.routeToPicker()
+        }
     }
 
-    private func checkCameraPermission() {
+    private func coordinate() -> Coordinate {
+        let coordinate = locationManager.location?.coordinate
+        let lat = Double(coordinate?.latitude ?? 0)
+        let lng = Double(coordinate?.longitude ?? 0)
+        return Coordinate(lat: lat, lng: lng)
+    }
+
+    private func routeToPicker() {
+        DispatchQueue.main.async { [weak self] in
+            guard let vc = self?.imagePickerController else {
+                return
+            }
+            self?.dependencies.router.trigger(.present(vc))
+        }
+    }
+}
+
+extension PhotoVM: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            dependencies.router.trigger(.back)
+            checkLocationPermission { [weak self] in
+                self?.updateImage.accept(image)
+                self?.reverseGeoCoding()
+            }
+        }
+    }
+}
+
+extension PhotoVM: CLLocationManagerDelegate {
+    // 시스템 팝업에서 권한 거부를 선택한 경우의 delegate
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        checkLocationPermission { [weak self] in
+            self?.requirePermission.accept("위치")
+        }
+    }
+
+    // 시스템 팝업에서 동의 관련 권한을 선택한 경우의 delegate
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .denied, .notDetermined, .restricted:
+            requirePermission.accept("위치")
+        default:
+            reverseGeoCoding()
+            break
+        }
+    }
+
+    // locatoinManager객체가 생겨나면 호출되는 함수이므로 주의
+    @available(iOS 14, *)
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+
+        switch manager.accuracyAuthorization {
+        case .reducedAccuracy:
+            requirePermission.accept("위치")
+        default:
+            reverseGeoCoding()
+            break
+        }
+
+    }
+}
+
+// MARK: - Check permission
+
+extension PhotoVM {
+    private func checkCameraPermission(completion: (() -> Void)?) {
         imagePickerController.sourceType = .camera
         imagePickerController.cameraFlashMode = .off
         AVCaptureDevice.requestAccess(for: .video) { [weak self] (granted: Bool) in
             if granted {
-                self?.routeToPicker()
+                completion?()
                 return
             }
             let status = AVCaptureDevice.authorizationStatus(for: .video)
             switch status {
             case .authorized:
-                self?.routeToPicker()
+                completion?()
                 return
             default:
                 self?.requirePermission.accept("카메라")
@@ -157,30 +238,29 @@ class PhotoVM: NSObject, ErrorHandleable {
         }
     }
 
-    private func coordinate() -> Coordinate {
-        locationManager = CLLocationManager()
-        let coordinate = locationManager.location?.coordinate
-        let lat = Double(coordinate?.latitude ?? 0)
-        let lng = Double(coordinate?.longitude ?? 0)
-        return Coordinate(lat: lat, lng: lng)
-    }
+    private func checkLocationPermission(completion: (() -> Void)?) {
+        let currentState = CLLocationManager.authorizationStatus()
+        switch currentState {
+        case .authorizedAlways, .authorizedWhenInUse:
+            break
+        default:
+            requirePermission.accept("위치")
+            return
+        }
 
-    private func routeToPicker() {
-        DispatchQueue.main.async { [weak self] in
-            guard let vc = self?.imagePickerController else {
+        if #available(iOS 14.0, *) {
+            let accuracyState = CLLocationManager().accuracyAuthorization
+            switch accuracyState {
+            case .reducedAccuracy:
+                requirePermission.accept("위치")
                 return
+            default:
+                completion?()
+                break
             }
-            self?.dependencies.router.trigger(.present(vc))
+        } else {
+            completion?()
         }
     }
-}
 
-extension PhotoVM: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            updateImage.accept(image)
-            reverseGeoCoding()
-        }
-        dependencies.router.trigger(.back)
-    }
 }
