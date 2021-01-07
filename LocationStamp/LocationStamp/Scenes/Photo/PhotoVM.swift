@@ -64,22 +64,21 @@ class PhotoVM: NSObject, ErrorHandleable {
 
     let dependencies: Dependencies
     let bag = DisposeBag()
+    var isRequestLocationPermissionMoreThanOnce = false
 
     // MARK: - Handling View Input
 
     func viewWillAppear() {
         imagePickerController.sourceType = .photoLibrary
-        checkPhotoPermission { [weak self] in
-            if let image = self?.dependencies.image {
-                self?.updateImage.accept(image)
-                self?.reverseGeoCoding()
-                self?.isFromCamera = true
-            }
-        }
     }
 
     private func reverseGeoCoding() {
+        checkLocationPermission { [weak self] in
+            self?.requestReverseGeoCoding()
+        }
+    }
 
+    private func requestReverseGeoCoding() {
         let coor = coordinate()
         if coor.lat == 0 {
             return
@@ -113,7 +112,6 @@ class PhotoVM: NSObject, ErrorHandleable {
     }
 
     func didTapBtnPhoto() {
-        isFromCamera = false
         routeToPicker()
     }
 
@@ -132,11 +130,14 @@ class PhotoVM: NSObject, ErrorHandleable {
     }
 
     private func routeToPicker() {
-        DispatchQueue.main.async { [weak self] in
+        isFromCamera = false
+        checkPhotoPermission { [weak self] in
             guard let vc = self?.imagePickerController else {
                 return
             }
-            self?.dependencies.router.trigger(.present(vc))
+            DispatchQueue.main.async {
+                self?.dependencies.router.trigger(.present(vc))
+            }
         }
     }
 }
@@ -144,21 +145,18 @@ class PhotoVM: NSObject, ErrorHandleable {
 extension PhotoVM: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            dependencies.router.trigger(.back)
             checkLocationPermission { [weak self] in
                 self?.updateImage.accept(image)
                 self?.reverseGeoCoding()
+                self?.dependencies.router.trigger(.back)
             }
         }
     }
 }
 
 extension PhotoVM: CLLocationManagerDelegate {
-    // 시스템 팝업에서 권한 거부를 선택한 경우의 delegate
+    // 시스템 팝업에서 권한 거부를 선택한 경우의 delegate (다음번에 묻기 시 동작x, background인 설정화면에 갔다온 경우도 실행됨)
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        checkLocationPermission { [weak self] in
-            self?.requirePermission.accept("위치")
-        }
     }
 
     // 시스템 팝업에서 동의 관련 권한을 선택한 경우의 delegate
@@ -167,8 +165,16 @@ extension PhotoVM: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
-        case .denied, .notDetermined, .restricted:
+        case .denied, .restricted:
             requirePermission.accept("위치")
+        case .notDetermined:
+            if !isRequestLocationPermissionMoreThanOnce {
+                isRequestLocationPermissionMoreThanOnce = true
+                locationManager.requestAlwaysAuthorization()
+                locationManager.requestLocation()
+            } else {
+                requirePermission.accept("위치")
+            }
         default:
             reverseGeoCoding()
             break
@@ -178,6 +184,10 @@ extension PhotoVM: CLLocationManagerDelegate {
     // locatoinManager객체가 생겨나면 호출되는 함수이므로 주의
     @available(iOS 14, *)
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+
+        if !isRequestLocationPermissionMoreThanOnce {
+            return
+        }
 
         switch manager.accuracyAuthorization {
         case .reducedAccuracy:
@@ -243,6 +253,15 @@ extension PhotoVM {
         switch currentState {
         case .authorizedAlways, .authorizedWhenInUse:
             break
+        case .notDetermined:
+            if !isRequestLocationPermissionMoreThanOnce {
+                isRequestLocationPermissionMoreThanOnce = true
+                locationManager.requestAlwaysAuthorization()
+                locationManager.requestLocation()
+            } else {
+                requirePermission.accept("위치")
+            }
+            return
         default:
             requirePermission.accept("위치")
             return

@@ -76,7 +76,7 @@
                                         <rect key="frame" x="80" y="256" width="254" height="170"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진을 선택해 주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="I2o-Jc-hO6">
-                                                <rect key="frame" x="70" y="74.5" width="114" height="21"/>
+                                                <rect key="frame" x="56.5" y="74.5" width="141.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -85,9 +85,9 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="170" id="1Zc-2k-MS0"/>
-                                            <constraint firstAttribute="trailing" secondItem="I2o-Jc-hO6" secondAttribute="trailing" constant="70" id="E72-MH-rjS"/>
                                             <constraint firstItem="I2o-Jc-hO6" firstAttribute="centerY" secondItem="Enm-3R-yHs" secondAttribute="centerY" id="dKK-tj-c32"/>
-                                            <constraint firstItem="I2o-Jc-hO6" firstAttribute="leading" secondItem="Enm-3R-yHs" secondAttribute="leading" constant="70" id="oN2-Xh-hBj"/>
+                                            <constraint firstItem="I2o-Jc-hO6" firstAttribute="centerX" secondItem="Enm-3R-yHs" secondAttribute="centerX" id="ial-iN-fcA"/>
+                                            <constraint firstItem="I2o-Jc-hO6" firstAttribute="centerY" secondItem="Enm-3R-yHs" secondAttribute="centerY" id="u2q-oO-kL2"/>
                                         </constraints>
                                     </view>
                                 </subviews>

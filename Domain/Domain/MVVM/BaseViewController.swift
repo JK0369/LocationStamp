@@ -82,8 +82,16 @@ open class BaseViewController: UIViewController {
 
     // Alert and open setting
     public func showAlertAndSetting(alertTitle: String, actionTitle: String) {
-        showAlert(title: alertTitle, message: nil, actionTitle: actionTitle) { [weak self] in
-            self?.openSettingsInApp()
+        if presentedViewController != nil { // 본 VC에서 modal로 부른 VC객체 지칭
+            dismiss(animated: true) { [weak self] in
+                self?.showAlert(title: alertTitle, message: nil, actionTitle: actionTitle) { [weak self] in
+                    self?.openSettingsInApp()
+                }
+            }
+        } else {
+            showAlert(title: alertTitle, message: nil, actionTitle: actionTitle) { [weak self] in
+                self?.openSettingsInApp()
+            }
         }
     }
     private func openSettingsInApp() {
