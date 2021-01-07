@@ -12,8 +12,7 @@ import XCoordinator
 
 indirect enum SplashRoute: Route {
     case splash
-    case info
-    case option
+    case photo
 
     case popAndPush(SplashRoute)
 }
@@ -34,18 +33,11 @@ class SplashCoordinator: BaseNavigationCoordinator<SplashRoute> {
             let vc = SplashBuilder.build(router: unownedRouter, postTaskManager: postTaskManager)
             return .set([vc])
 
-        case .info:
-            let vc = InfoBuilder.build(
-                router: unownedRouter,
-                postTaskManager: postTaskManager
-            )
-            return .push(vc)
-
-        case .option:
-            let coordinator = OptionCoordinator(
+        case .photo:
+            let coordinator = PhotoCoordinator(
                 rootViewController: rootViewController,
                 postTaskManager: postTaskManager,
-                initialRoute: .option
+                initialRoute: .photo(nil)
             )
             return .addChild(coordinator)
 

@@ -36,50 +36,6 @@
             </objects>
             <point key="canvasLocation" x="141" y="134"/>
         </scene>
-        <!--InfoVC-->
-        <scene sceneID="OH7-3M-KMc">
-            <objects>
-                <viewController storyboardIdentifier="InfoVC" id="LmX-8R-OJd" customClass="InfoVC" customModule="LocationStamp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8Vc-0e-BIc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안내화면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSS-2s-mOu">
-                                <rect key="frame" x="177.5" y="68" width="59" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(필수) 위치 권한이 필요합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfz-Yi-gg9">
-                                <rect key="frame" x="106" y="189" width="202" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdu-sc-wDL">
-                                <rect key="frame" x="192" y="816" width="30" height="30"/>
-                                <state key="normal" title="확인"/>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="haW-3K-b0j"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="bSS-2s-mOu" firstAttribute="centerX" secondItem="8Vc-0e-BIc" secondAttribute="centerX" id="3v8-Sf-siT"/>
-                            <constraint firstItem="lfz-Yi-gg9" firstAttribute="top" secondItem="bSS-2s-mOu" secondAttribute="bottom" constant="100" id="BE2-0U-9mk"/>
-                            <constraint firstItem="bSS-2s-mOu" firstAttribute="top" secondItem="haW-3K-b0j" secondAttribute="top" constant="24" id="LWI-lt-Xud"/>
-                            <constraint firstItem="lfz-Yi-gg9" firstAttribute="centerX" secondItem="8Vc-0e-BIc" secondAttribute="centerX" id="QqB-GZ-xjd"/>
-                            <constraint firstItem="cdu-sc-wDL" firstAttribute="centerX" secondItem="8Vc-0e-BIc" secondAttribute="centerX" id="Ui6-hl-Zd2"/>
-                            <constraint firstItem="haW-3K-b0j" firstAttribute="bottom" secondItem="cdu-sc-wDL" secondAttribute="bottom" constant="16" id="ab3-BI-g7n"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="btnConfirm" destination="cdu-sc-wDL" id="EdV-Bv-Fnm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4TS-4i-urR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="899" y="134"/>
-        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

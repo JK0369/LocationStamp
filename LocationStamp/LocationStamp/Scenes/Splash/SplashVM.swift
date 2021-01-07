@@ -35,11 +35,11 @@ class SplashVM: ErrorHandleable {
 
     func viewWillAppear() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-            self?.routeToInfo()
+            self?.routeToPhoto()
         }
     }
 
-    private func routeToInfo() {
-        dependencies.router.trigger(.popAndPush(.info))
+    private func routeToPhoto() {
+        dependencies.router.trigger(.popAndPush(.photo))
     }
 }
